@@ -958,38 +958,13 @@ data='golf'
 
 
 # 15. Floating Point Arithmetic: Issues and Limitations
+from time import sleep
+import numpy as np
 
+# https://www.mathsisfun.com/binary-number-system.html
 
-# base 2, base 10, and base 16
-0.125
-
-a_num = 0.125
-
-str(a_num)
-[bin(int(i)) for i in str(a_num) if i not in '.']
-
-bins = ['0', '1', '10', '11', '100', '101', '110', '111', '1000', '1001', '1010']
-[int(a_bin, 2) for a_bin in bins]
-
-
-int('0b1010', 2)
-bin(10)
-int(bin(10), 2)
-
-2 ** 0
-2 ** 1
-2 ** 2
-2 ** 3
-2 ** 4
-
-
-
-an_int = 10
-the_bins = []
-
-
-def convert_int_to_base(n=10, base_to=2):
-    """Converts number from base to new base
+def conv_int_to_base(n=10, base_to=2):
+    """Converts integer of number to new base
 
     Args:
         n(int): an integer
@@ -1007,24 +982,36 @@ def convert_int_to_base(n=10, base_to=2):
 
     return ''.join(map(str, bins[::-1]))
 
-def conv_frac_to_base(n=.625, base_to=2):
-    n = n - int(n)
-    pass
 
-n = 10.625
-n = n - int(n)
-n
+def conv_frac_to_base(n=10.625, base_to=2, k_prec=10):
+    """Converts decimal of number to new base and precision
 
-# loop
-''.join(str(x) for x in reversed(the_bins))
+    Args:
+        n(float): float
+        base_to(int): base to conver to
+        k_prec(int): number to precision
 
-convert_base(17)
-convert_base(10, 4)
-
-from time import sleep
-
-def print_convert_base(n_from=1, n_to=10, base_to=2, n_sleep=1):
+    Returns:
+        String with decimal point and new base number
     """
+    n -= int(n)
+    frac_bin = []
+    for i in range(k_prec):
+        n = n * base_to
+        n_bit = int(n)
+        frac_bin.append(n_bit)
+        n -= n_bit
+        if n == 0:
+            break
+    return '.' + ''.join(map(str, frac_bin))
+    
+
+conv_int_to_base(13.625) + conv_frac_to_base(13.625)
+conv_int_to_base(10.625) + conv_frac_to_base(10.625)
+
+
+def print_conv_base(n_from=1, n_to=10, n_step=.25, n_round=3, base_to=2, n_sleep=1):
+    """Neatly prints a range of numbers to new base
 
     Args:
         n_from(int): from int
@@ -1033,33 +1020,47 @@ def print_convert_base(n_from=1, n_to=10, base_to=2, n_sleep=1):
     Returns:
         None
     """
-    from_pad = len(str(n_to))
-    to_pad = len(convert_base(n_to))
+    n_range = list(np.round(np.arange(n_from, n_to + 1, n_step), n_round))
+    from_pad = max(map(len, map(str, n_range)))
 
-    for i in range(n_from, n_to+1):
-        new_i = convert_base(i, base_to=base_to)
-        print(f'{i:>{from_pad},} to base 2: {new_i:>{to_pad}}')
+    conv_int = map(lambda x: conv_int_to_base(n=x, base_to=base_to), n_range)
+    conv_dec = map(lambda x: conv_frac_to_base(n=x, base_to=base_to), n_range)
+    conv_cat = [a[0] + a[1] for a in zip(conv_int, conv_dec)]
+
+    to_pad = max(map(len, conv_cat))
+
+    for i in range(len(n_range)):
+        print(f'{n_range[i]:>{from_pad},} to base {base_to}: {conv_cat[i]:>{to_pad}}')
         sleep(n_sleep)
 
 
-print_convert_base(10_000, 10_100, base_to=2, n_sleep=.5)
+print_conv_base(n_from=10.625, n_to=14.625, n_step=1, n_round=3, base_to=2, n_sleep=.5)
+print_conv_base(n_from=1, n_to=10, n_step=.3, n_round=2, base_to=4, n_sleep=.5)
 
 
-.625
-1/2 + 0/4 + 1/8
+def print_base_mult(base_to=2, range_to=5):
+    """Print base multiple
 
+    Args:
+        base_to(int): base to
+        range_to(int): range of values to print
 
-int(13 / 2)
-int(_ / 2)
-1 % 2
+    Returns:
+        None
+    """
+    result = '| '
+    for i in reversed(range(0, range_to)):
+        result += str(base_to ** i)
+        result += ' | '
 
+    for i in range(1, range_to):
+        result += '1/' + str((base_to ** i))
+        result += ' | '
 
-.625 / .5
-.625 % .5
-.125 % .5
-.125 / .5
-.25 / .5
-.25 % .5
+    print(result)
+
+print_base_mult(2, 6)
+print_base_mult(4, 6)
 
 
 
