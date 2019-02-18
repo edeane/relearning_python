@@ -6,7 +6,8 @@ Pycharm setup setting
 
 - Editor > Font > Size: 13
 - Keymap > Execute > Execute selection in console: Ctrl + Enter
-- Tools > Python External Documentation: https://stackoverflow.com/questions/49777474/does-anyone-have-the-documentation-urls-in-pycharm-for-the-following-libraries
+- Tools > Python External Documentation: https://stackoverflow.com/questions/49777474/does-anyone-have-the-
+    documentation-urls-in-pycharm-for-the-following-libraries
 - Ctrl + Q view documentation then pin
 - Install  https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python mysqlclient
 - pip install C:/Users/<username> /Downloads/mysqlclient-1.3.13-cp37-cp37m-win_amd64.whl
@@ -17,8 +18,6 @@ Official Python Documentation https://docs.python.org/3/
 - Standard Library https://docs.python.org/3/library/index.html
 - Language Reference https://docs.python.org/3/reference/index.html
 
-base python
-Iterators and Generators (yield)
 
 ctrl + q for documentation
 datatypes (string, int, double) and
@@ -49,7 +48,8 @@ http://flake8.pycqa.org/en/latest/index.html
 
 
 learn about project folder structure
-https://drivendata.github.io/cookiecutter-data-science/ talk: http://isaacslavitt.com/2016/07/20/data-science-is-software-talk/
+https://drivendata.github.io/cookiecutter-data-science/ talk: http://isaacslavitt.com/2016/07/20/data-science-
+    is-software-talk/
 https://blog.godatadriven.com/how-to-start-a-data-science-project-in-python
 
 '''

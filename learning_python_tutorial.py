@@ -692,19 +692,374 @@ percentage
 
 
 
+str(123) # human readable
+repr(123) # read by the interpreter
+
+s = 'Hello, world.'
+str(s)
+repr(s)
+str(1/7)
+x = 10 * 3.25
+y  =200 * 200
+
+s = 'The value of x is ' + repr(x) + ', and y is ' + repr(y) + '...'
+s
+print(s)
+
+hello = 'hello, world\n'
+hellow = repr(hello)
+hellow
+print(hellow)
+
+repr((x, y, ('spam', 'eggs')))
+
+# formatted string literals
+
+import math
+
+print(f'The value of pi is approximately {math.pi:.3f}')
+
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+for name, phone in table.items():
+    print(f'{name:10} ==> {phone:10d}')
+
+
+# !a applies ascii(), !s applies str, and !r applies repr
+
+animals = 'eels'
+print(f'My hovercraft is full of {animals}.')
+print(f'My hovercraft is full of {animals!r}.')
+print(f'My hovercraft is full of {animals!s}.')
 
 
 
+animals_dict = {'bird': 'fly', 'fish': 'swim', 'human': 'walk', 'bear': 'strong', 'leopard': 'run', 'snail': 'slow'}
+
+print('bird: {0[bird]}, fish: {0[fish]}, human: {0[human]}'.format(animals_dict))
+print('bird: {bird}, fish: {fish}, human: {human}'.format(**animals_dict))
+
+
+# should use the formatted string literals over '.format()' if possible
+
+print('{0} and {1}'.format('spam', 'eggs'))
+print('The story of {0}, {1}, and {other}'.format('Bill', 'Manfred', other='Georg'))
 
 
 
+for x in range(1, 11):
+    print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))
+
+
+start_n, stop_n = 1, 12
+max_char = len(str((stop_n - 1) ** 3))
+for x in range(start_n, stop_n):
+    print(f'{x:{max_char}} {x*x:{max_char}} {x*x*x:{max_char}}')
+
+
+for i in range(start_n, stop_n):
+    print(repr(i).rjust(2), repr(i**2).rjust(3), repr(i**3).rjust(4))
+
+
+# zero pad
+'347'.zfill(4)
+'-3.14'.zfill(7)
+print(math.pi)
+'3.1415926535897'.zfill(5)
+
+# reading and writing files
+# 'r' read only
+# 'w' write over
+# 'a' appending
+# 'b' binary
+# \n on unix \r\n on windows
+# use with so it is properly closed
+
+with open('requirements.txt') as f:
+    require_data = f.read()
+
+print(require_data)
+require_data_lst = require_data.split('\n')
+require_data_lst.pop()
+require_data_lst
+
+req_dict = dict()
+for i in require_data_lst:
+    pack, ver = i.split('==')
+    req_dict[pack] = ver
+
+for i, j in req_dict.items():
+    print(i, j)
+
+with open('new_file_written.txt', 'w') as f:
+    f.write('This is a test\nthis is another line')
+
+
+# can dump objects
+import json
+
+json.dumps([1, 'simple', 'list'])
+
+with open('json_dump', 'w') as f:
+    json.dump([animals_dict, req_dict], f)
+
+with open('json_dump', 'r') as f:
+    x = json.load(f)
+
+x
+
+# can also use pickle
+# pickle data coming from an untrusted source can execute arbitrary code it the data was crafted by
+# a skilled attacker
+
+
+# 8. Errors and Exceptions
 
 
 
+while True:
+    try:
+        x = int(input('Please enter a number: '))
+        break # break out of the while loop
+    except ValueError:
+        print('Oops! That was not a valide number. Try again...')
 
 
 
+a_file = 'requirements.txt'
 
+try:
+    f = open(a_file, 'r')
+except OSError:
+    print('cannot open', a_file)
+else:
+    print(a_file, 'has', len(f.readlines()), 'lines')
+    f.close()
+
+try:
+    raise Exception('spam', 'eggs')
+except Exception as inst:
+    print(inst)
+
+
+def this_failes():
+    x = 1/0
+
+
+try:
+    this_failes()
+except Exception:
+    print('error')
+
+
+try:
+    this_failes()
+except Exception as inst:
+    print('error:', inst)
+
+
+raise NameError('HiThere')
+
+
+
+# Classes!!! attributes and methods
+
+class Complex:
+    def __init__(self, realpart, imagpart):
+        self.r = realpart
+        self.i = imagpart
+
+    def f(self, x):
+        return x**3
+
+
+comp_class = Complex(3.0, -4.5)
+
+comp_class.r
+comp_class.i
+comp_class.f(3)
+
+
+# class Dog:
+#     tricks = [] # incorrect because it will be shared by all instances
+#     def __init__(self, name):
+#         self.name = name
+#     def add_trick(self, trick):
+#         self.tricks.append(trick)
+
+class Dog:
+    def __init__(self, name):
+        self.name = name
+        self.tricks = []
+        self._private = 42
+
+    def add_trick(self, trick):
+        self.tricks.append(trick)
+
+    def print_private(self):
+        print(self._private)
+
+
+a = Dog('fido')
+b = Dog('buddy')
+
+a.add_trick('walk')
+a.add_trick('run')
+a.tricks
+b.tricks
+b.print_private()
+b.print_private()
+
+# Iterators use iter() and next()
+
+s = 'abc'
+it = iter(s)
+
+next(it)
+next(it)
+
+
+class Reverse:
+    """Iterator for looping over a sequence backwards."""
+    def __init__(self, data):
+        self.data = data
+        self.index = len(data)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index = self.index - 1
+        return self.data[self.index]
+
+rev_spam = Reverse('green eggs and ham')
+
+for char in rev_spam:
+    print(char)
+
+
+# Generators use yield
+
+def reverse_fun(data):
+    for index in range(len(data)-1, -1, -1):
+        yield data[index]
+
+
+for char in reverse_fun('golf'):
+    print(char)
+
+
+# sum of squares
+sum(i**2 for i in range(1, 10))
+
+data='golf'
+[data[i] for i in range(len(data)-1, -1, -1)]
+
+
+# 15. Floating Point Arithmetic: Issues and Limitations
+
+
+# base 2, base 10, and base 16
+0.125
+
+a_num = 0.125
+
+str(a_num)
+[bin(int(i)) for i in str(a_num) if i not in '.']
+
+bins = ['0', '1', '10', '11', '100', '101', '110', '111', '1000', '1001', '1010']
+[int(a_bin, 2) for a_bin in bins]
+
+
+int('0b1010', 2)
+bin(10)
+int(bin(10), 2)
+
+2 ** 0
+2 ** 1
+2 ** 2
+2 ** 3
+2 ** 4
+
+
+
+an_int = 10
+the_bins = []
+
+
+def convert_int_to_base(n=10, base_to=2):
+    """Converts number from base to new base
+
+    Args:
+        n(int): an integer
+        base_to(int): base to convert to
+
+    Returns:
+        String with new base number
+    """
+    n = int(n)
+    bins = []
+    while n > 0:
+        n_bin = n % base_to
+        bins.append(n_bin)
+        n = int(n / base_to)
+
+    return ''.join(map(str, bins[::-1]))
+
+def conv_frac_to_base(n=.625, base_to=2):
+    n = n - int(n)
+    pass
+
+n = 10.625
+n = n - int(n)
+n
+
+# loop
+''.join(str(x) for x in reversed(the_bins))
+
+convert_base(17)
+convert_base(10, 4)
+
+from time import sleep
+
+def print_convert_base(n_from=1, n_to=10, base_to=2, n_sleep=1):
+    """
+
+    Args:
+        n_from(int): from int
+        n_to(int): to int
+
+    Returns:
+        None
+    """
+    from_pad = len(str(n_to))
+    to_pad = len(convert_base(n_to))
+
+    for i in range(n_from, n_to+1):
+        new_i = convert_base(i, base_to=base_to)
+        print(f'{i:>{from_pad},} to base 2: {new_i:>{to_pad}}')
+        sleep(n_sleep)
+
+
+print_convert_base(10_000, 10_100, base_to=2, n_sleep=.5)
+
+
+.625
+1/2 + 0/4 + 1/8
+
+
+int(13 / 2)
+int(_ / 2)
+1 % 2
+
+
+.625 / .5
+.625 % .5
+.125 % .5
+.125 / .5
+.25 / .5
+.25 % .5
 
 
 
