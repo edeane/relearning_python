@@ -1062,5 +1062,15 @@ def print_base_mult(base_to=2, range_to=5):
 print_base_mult(2, 6)
 print_base_mult(4, 6)
 
+from sklearn import datasets
+
+datasets.load_boston()
+
+
+print()
+
+
+
+
 
 

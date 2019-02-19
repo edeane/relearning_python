@@ -239,7 +239,7 @@ round(.7 * 1.05, 2)
 
 for i in range(1, 15, 2):
     n = i / 2
-    print(n, '===>', round(n), np.round(n), Decimal(str(n)).quantize(0, ROUND_HALF_UP))
+    # print(n, '===>', round(n), np.round(n), Decimal(str(n)).quantize(0, ROUND_HALF_UP))
 
 from decimal import ROUND_HALF_UP
 ROUND_HALF_UP
@@ -266,7 +266,7 @@ sum([0.1] * 10) == 1.0
 
 (0.1 * 10) == 1.0
 
-1 %% .1
+1 % .1
 
 10 % 4
 10 % 3
