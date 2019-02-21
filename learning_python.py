@@ -7,7 +7,7 @@ X python tutorial
 X python standard library
 X mysqlclient pandas real_sql to_sql
 X unittests (https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html)
-- numpy
+X numpy
 - pandas
 - plotting
 - threading, parallel, multiprocessing
