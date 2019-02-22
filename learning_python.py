@@ -95,6 +95,28 @@ class Dog:
         return position
 
 
+n = input('Enter a number: ')
+print(f'{n} * 3 = {n * 3}')
+n = int(n)
+print(f'{n} * 3 = {n * 3}')
+
+'123'.isdigit()
+'123'.isnumeric()
+
+n = input('Enter a number: ')
+if n.isdigit():
+    n = int(n)
+    print(f'{n} * 3 = {n * 3}')
+
+n = 'abc'
+int(n)
+try:
+    n = int(n)
+except ValueError:
+    print(f"Can't convert {n} to integer")
+
+
+
 
 
 

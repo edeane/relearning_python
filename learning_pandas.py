@@ -173,7 +173,15 @@ df.head()
 # https://medium.com/dunder-data/minimally-sufficient-pandas-a8e67f2a2428
 
 emp = pd.read_csv('data/employee.csv')
+print(emp.head())
+
+emp.columns = [x.lower() for x in emp.columns]
 emp.head()
+emp.columns
+
+emp.groupby(['department', 'gender']).agg({'base_salary': 'mean'}).round(-3).head()
+emp.pivot_table(index=['department', 'gender'], values='base_salary', aggfunc='mean').round(-3).head()
+emp.pivot_table(index='department', columns='gender', values='base_salary', aggfunc='mean').round(-3).head()
 
 
 
