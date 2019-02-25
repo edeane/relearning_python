@@ -1,6 +1,9 @@
 """
 Relearning the basics after being away from python for a year!
 
+Comprehensive Python Cheatsheet
+https://gto76.github.io/python-cheatsheet/
+
 relearing packages order:
 X pycharm stuff (venv, shortcuts, https://www.jetbrains.com/help/pycharm/meet-pycharm.html)
 X python tutorial
@@ -10,10 +13,11 @@ X unittests (https://www.jetbrains.com/help/pycharm/testing-your-first-python-ap
 X numpy
 X pandas
 - plotting
+- webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
 - threading, parallel, multiprocessing
 - creating modules and packages (https://docs.python.org/3/distributing/index.html)
-- blackjack project
-- ncaabb project
+- blackjack project (
+- ncaabb project (https://github.com/rodzam/ncaab-stats-scraper)
 - django
 - magic methods
 - decorators (property, classmethod, staticmethod)
