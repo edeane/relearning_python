@@ -310,6 +310,150 @@ plt.show(g)
 
 # linear relationships
 # https://seaborn.pydata.org/tutorial/regression.html#visualizing-linear-relationships
+plt.ioff()
+tips = sns.load_dataset('tips')
+sns.regplot(data=tips, x='total_bill', y='tip')
+plt.show()
+
+sns.lmplot(data=tips, x='total_bill', y='tip')
+plt.show()
+
+sns.lmplot(data=tips, x='size', y='tip')
+plt.show()
+
+sns.lmplot(data=tips, x='size', y='tip', x_jitter=.1)
+plt.show()
+
+sns.lmplot(data=tips, x='size', y='tip', x_estimator=np.mean)
+plt.show()
+
+
+anscombe = sns.load_dataset('anscombe')
+anscombe.head()
+anscombe.groupby('dataset').agg('size')
+
+sns.lmplot(data=anscombe[anscombe['dataset']=='I'], x='x', y='y', ci=None)
+plt.show()
+
+sns.lmplot(data=anscombe[anscombe['dataset']=='II'], x='x', y='y', ci=None)
+plt.show()
+
+sns.lmplot(data=anscombe[anscombe['dataset']=='II'], x='x', y='y', ci=None, order=2) # 2nd ordre polynomial
+plt.show()
+
+sns.lmplot(data=anscombe[anscombe['dataset']=='III'], x='x', y='y', ci=None)
+plt.show()
+
+sns.lmplot(data=anscombe[anscombe['dataset']=='III'], x='x', y='y', ci=None, robust=True)
+plt.show()
+
+tips.head()
+tips['big_tip'] = (tips['tip'] / tips['total_bill']) > .15
+sns.lmplot(data=tips, x='total_bill', y='big_tip', logistic=True, y_jitter=.1)
+plt.show()
+
+
+sns.lmplot(data=tips, x='total_bill', y='tip', lowess=True, line_kws={'color':'red'})
+plt.show()
+
+sns.residplot(data=anscombe[anscombe['dataset']=='I'], x='x', y='y')
+plt.show()
+
+sns.residplot(data=anscombe[anscombe['dataset']=='II'], x='x', y='y')
+plt.show()
+
+tips = sns.load_dataset('tips')
+tips.head()
+sns.lmplot(data=tips, x='total_bill', y='tip', hue='smoker')
+plt.show()
+
+sns.lmplot(data=tips, x='total_bill', y='tip', hue='smoker', col='time')
+plt.show()
+
+sns.lmplot(data=tips, x='total_bill', y='tip', hue='smoker', col='time', row='sex')
+plt.show()
+
+sns.jointplot(data=tips, x='total_bill', y='tip', kind='reg')
+plt.show()
+
+import statsmodels.api as sm
+tips = sm.add_constant(tips, prepend=False)
+tips.head()
+x = tips.loc[:, ['total_bill', 'const']]
+y = tips.loc[:, 'tip']
+mod = sm.OLS(y, x)
+mod_res = mod.fit()
+print(mod_res.summary())
+mod_res
+
+from scipy import stats
+slope, intercept, r_value, p_value, std_err = stats.linregress(x=tips['total_bill'], y=tips['tip'])
+print(f'slope: {slope:.4f}\nintercept: {intercept:.4f}\nr_value: {r_value:.4f}\np_value: {p_value:.4f}\n'
+      f'std_err: {std_err:.4f}')
+
+
+sns.pairplot(data=tips, x_vars=['total_bill', 'size'], y_vars='tip', kind='reg')
+plt.show()
+
+sns.pairplot(data=tips, x_vars=['total_bill', 'size'], y_vars='tip', hue='smoker', kind='reg')
+plt.show()
+
+sns.set_color_codes('colorblind')
+sns.set_palette('colorblind')
+sns.set_palette('PuBuGn_d')
+sns.set_context('talk')
+
+def sinplot(flip=1):
+    x = np.linspace(0, 14, 100)
+    for i in range(1, 7):
+        plt.plot(x, np.sin(x + i * .5) * (7 - i) * flip)
+
+
+sinplot()
+plt.show()
+
+
+# resets to default
+sns.set()
+
+sinplot()
+plt.show()
+
+data = np.random.normal(size=(20, 6)) + np.arange(6) / 2
+df = pd.DataFrame(data)
+df.head()
+data.shape
+sns.boxplot(data=df)
+plt.show()
+
+sns.set_style('white')
+
+sinplot()
+plt.show()
+
+sinplot()
+sns.despine()
+plt.show()
+
+
+sns.set_style('whitegrid')
+sns.boxplot(data=df, palette='colorblind')
+sns.despine(left=True)
+plt.show()
+
+
+sns.set_context('talk')
+sinplot()
+plt.show()
+
+sns.set_context('poster')
+sinplot()
+plt.show()
+
+sns.set_context('paper')
+sinplot()
+plt.show()
+
 
 
 
