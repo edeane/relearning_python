@@ -4,6 +4,9 @@ Relearning the basics after being away from python for a year!
 Comprehensive Python Cheatsheet
 https://gto76.github.io/python-cheatsheet/
 
+Learn Python in Y minutes
+https://learnxinyminutes.com/docs/python3/
+
 relearing packages order:
 X pycharm stuff (venv, shortcuts, https://www.jetbrains.com/help/pycharm/meet-pycharm.html)
 X python tutorial
@@ -12,12 +15,14 @@ X mysqlclient pandas real_sql to_sql
 X unittests (https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html)
 X numpy
 X pandas
-- plotting
-- webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
+- plotting (mostly just seaborn)
+X webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
 - threading, parallel, multiprocessing
 - creating modules and packages (https://docs.python.org/3/distributing/index.html)
-- blackjack project (
+- blackjack project (beat the dealer book)
 - ncaabb project (https://github.com/rodzam/ncaab-stats-scraper)
+- ufc stats (http://ufcstats.com/statistics/events/completed fighttrax)
+- scrape newsletters and create topics
 - django
 - magic methods
 - decorators (property, classmethod, staticmethod)
@@ -119,11 +124,24 @@ try:
 except ValueError:
     print(f"Can't convert {n} to integer")
 
+import random
 
+j_list = [4, 4, 4, 9, 10, 11, 12]
+p_len = 4
+random.shuffle(j_list)
 
+def find_min_max_avg(j_list, p_len):
+    j_list = sorted(j_list)
+    if p_len <= len(j_list):
+        min_avg = sum(j_list[:p_len])/p_len
+        max_avg = sum(j_list[-p_len:])/p_len
+        print(f'the min avg is: {min_avg}\nthe max avg is: {max_avg}')
+    else:
+        print('p_len is too large')
 
-
-
+find_min_max_avg(j_list, 2)
+find_min_max_avg(j_list, 3)
+find_min_max_avg(j_list, 7)
 
 
 

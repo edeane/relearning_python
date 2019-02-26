@@ -19,6 +19,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy import stats
 sns.set(style='whitegrid')
 
 
@@ -160,6 +161,158 @@ plt.show()
 
 
 # categorical data
+# https://seaborn.pydata.org/tutorial/categorical.html
+
+tips = sns.load_dataset('tips')
+tips.head()
+
+sns.catplot(data=tips, x='day', y='total_bill')
+sns.catplot(data=tips, x='day', y='total_bill', jitter=False)
+sns.catplot(data=tips, x='day', y='total_bill', kind='swarm')
+sns.catplot(data=tips, x='day', y='total_bill', hue='sex', kind='swarm')
+sns.catplot(data=tips, x='size', y='total_bill', kind='swarm')
+sns.catplot(data=tips, x='smoker', y='tip', order=['No', 'Yes'], kind='swarm')
+sns.catplot(data=tips, x='total_bill', y='day', hue='time', kind='swarm')
+
+# boxplots
+sns.catplot(data=tips, x='day', y='total_bill', kind='box')
+sns.catplot(data=tips, x='day', y='total_bill', kind='box', hue='smoker')
+tips['weekend'] = (tips['day'] == 'Sun') | (tips['day'] == 'Sat')
+tips.head()
+sns.catplot(data=tips, x='day', y='total_bill', kind='box', hue='weekend')
+
+
+# boxenplot
+diamonds = sns.load_dataset('diamonds')
+sns.catplot(data=diamonds.sort_values('color'), x='color', y='price', kind='boxen')
+
+# violin plot
+sns.catplot(data=tips, x='total_bill', y='day', hue='time', kind='violin', bw=.15, cut=0, split=True)
+
+sns.catplot(x="day", y="total_bill", hue="sex",
+            kind="violin", inner="stick", split=True,
+            palette="pastel", data=tips)
+
+plt.ioff()
+g = sns.catplot(data=tips, x='day', y='total_bill', kind='violin', inner=None)
+sns.catplot(data=tips, x='day', y='total_bill', kind='swarm', ax=g.ax, color='k', size=3)
+plt.show()
+
+
+
+# barplots
+
+titanic = sns.load_dataset('titanic')
+sns.catplot(data=titanic, x='sex', y='survived', hue='class', kind='bar')
+plt.show()
+
+sns.catplot(data=titanic, x='deck', kind='count', palette='ch:.25')
+plt.show()
+
+sns.catplot(data=titanic, y='deck', hue='class', kind='count', palette='pastel')
+plt.show()
+
+# point plots (pick up on the differences of slopes...)
+sns.catplot(data=titanic, x='sex', y='survived', kind='point', hue='class')
+plt.show()
+
+sns.catplot(data=titanic, x='class', y='survived', kind='point', hue='sex')
+plt.show()
+
+
+f, ax = plt.subplots(figsize=(7,3))
+sns.countplot(data=titanic, y='deck', color='c')
+plt.show()
+
+
+g = sns.catplot(x="fare", y="survived", row="class",
+                kind="box", orient="h", height=1.5, aspect=4,
+                data=titanic[titanic['fare']>0], order=[1, 0])
+g.set(xscale="log")
+g
+plt.show()
+
+# distributions
+
+x = np.random.normal(size=100)
+sns.distplot(x)
+plt.show()
+
+sns.distplot(x, kde=False, rug=True)
+plt.show()
+
+sns.distplot(x, kde=False, rug=True, bins=20)
+plt.show()
+
+sns.distplot(x, kde=True, hist=False, rug=True, bins=20)
+plt.show()
+
+# how kde works (replace guassian curve centered at each value, then sum each curve, then normalize)
+x = np.random.normal(size=30)
+bandwidth = 1.06 * x.std() * (x.size ** (-1/5))
+support = np.linspace(-4, 4, 200)
+kernels = []
+for x_i in x:
+    kernel = stats.norm(x_i, bandwidth).pdf(support)
+    kernels.append(kernel)
+    plt.plot(support, kernel, color='b')
+sns.rugplot(x, linewidth=3)
+plt.show()
+
+from scipy.integrate import trapz
+density = np.sum(kernels, axis=0)
+density /= trapz(density, support)
+plt.plot(support, density)
+sns.kdeplot(x, shade=True)
+plt.show()
+
+sns.kdeplot(x, bw=.2, label='.2')
+sns.kdeplot(x, bw=2, label='2')
+plt.show()
+
+
+# scatterplots
+
+mean, cov = [0, 1], [(1, .5), (.5, 1)]
+data=np.random.multivariate_normal(mean, cov, 200)
+df = pd.DataFrame(data, columns=['x', 'y'])
+print(df.head())
+sns.jointplot(data=df, x='x', y='y')
+plt.show()
+
+sns.jointplot(data=df, x='x', y='y', kind='hex')
+plt.show()
+
+sns.jointplot(data=df, x='x', y='y', kind='kde')
+plt.show()
+
+f, ax = plt.subplots(figsize=(6,6))
+sns.kdeplot(data=df['x'], data2=df['y'], ax=ax)
+sns.rugplot(df['x'], ax=ax)
+sns.rugplot(df['y'], ax=ax, vertical=True)
+plt.show()
+
+
+f, ax = plt.subplots(figsize=(6,6))
+cmap = sns.cubehelix_palette(as_cmap=True, dark=0, light=1, reverse=True)
+sns.kdeplot(df['x'], df['y'], cmap=cmap, n_levles=60, shade=True)
+
+
+iris = sns.load_dataset('iris')
+sns.pairplot(iris)
+
+g = sns.PairGrid(iris)
+g.map_diag(sns.kdeplot)
+g.map_offdiag(sns.kdeplot, n_levels=6);
+plt.show(g)
+
+
+
+# linear relationships
+# https://seaborn.pydata.org/tutorial/regression.html#visualizing-linear-relationships
+
+
+
 
 
 
