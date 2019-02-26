@@ -15,8 +15,9 @@ X mysqlclient pandas real_sql to_sql
 X unittests (https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html)
 X numpy
 X pandas
-- plotting (mostly just seaborn)
+X plotting (mostly just seaborn)
 X webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
+- sklearn
 - threading, parallel, multiprocessing
 - creating modules and packages (https://docs.python.org/3/distributing/index.html)
 - blackjack project (beat the dealer book)
