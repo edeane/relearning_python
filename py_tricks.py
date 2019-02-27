@@ -69,6 +69,48 @@ sorted(xs.items(), key=itemgetter(1), reverse=True)
 
 
 
+# the get() method on dicts and its "default" argument
+
+name_for_userid= {382: 'Alice', 590: 'Bob', 951: 'Dilbert'}
+
+
+def greeting(userid):
+    print(f'Hi {name_for_userid.get(userid, "there")}!')
+
+greeting(590)
+greeting(4242)
+
+
+# using namedtuple is way shorter than defining a class manually
+
+from collections import namedtuple
+
+Car = namedtuple('Car', 'color mileage')
+
+# our new car class works as expected:
+
+my_car = Car('red', 3812.4)
+my_car.color
+my_car.mileage
+my_car
+my_car.color = 'blue'
+my_car
+type(my_car)
+my_car
+
+Point = namedtuple('Point', ['x', 'y', 'z'])
+
+p1 = Point(11, 12, 13)
+p1
+p1.x
+
+
+
+
+
+
+
+
 
 
 
