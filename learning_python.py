@@ -7,6 +7,13 @@ https://gto76.github.io/python-cheatsheet/
 Learn Python in Y minutes
 https://learnxinyminutes.com/docs/python3/
 
+Official Python Documentation https://docs.python.org/3/
+Tutorial https://docs.python.org/3/tutorial/index.html
+Standard Library https://docs.python.org/3/library/index.html
+Language Reference https://docs.python.org/3/reference/index.html
+
+
+
 relearing packages order:
 X pycharm stuff (venv, shortcuts, https://www.jetbrains.com/help/pycharm/meet-pycharm.html)
 X python tutorial
@@ -17,7 +24,7 @@ X numpy
 X pandas
 X plotting (mostly just seaborn)
 X webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
-- sklearn
+- sklearn (tutorials)
 - threading, parallel, multiprocessing
 - creating modules and packages (https://docs.python.org/3/distributing/index.html)
 - blackjack project (beat the dealer book)
@@ -29,6 +36,21 @@ X webscraping (https://realpython.com/python-web-scraping-practical-introduction
 - decorators (property, classmethod, staticmethod)
 - more standard library https://docs.python.org/3/library/index.html
 
+create requirements.txt
+X pip freeze > requirements.txt
+
+learn about documentation tools
+X Google Docstring Standard https://github.com/google/styleguide/blob/gh-pages/pyguide.md
+- https://matplotlib.org/sampledoc/
+- http://www.sphinx-doc.org/en/master/
+- http://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html
+- https://www.mkdocs.org/
+
+learn about project folder structure
+- https://drivendata.github.io/cookiecutter-data-science/ talk: http://isaacslavitt.com/2016/07/20/data-science-
+    is-software-talk/
+- https://blog.godatadriven.com/how-to-start-a-data-science-project-in-python
+
 Pycharm setup setting
 - Editor > Font > Size: 13
 - Keymap > Execute > Execute selection in console: Ctrl + Enter
@@ -38,28 +60,6 @@ Pycharm setup setting
 - pip install C:/Users/<username> /Downloads/mysqlclient-1.3.13-cp37-cp37m-win_amd64.whl
 - Check Settings > Appearance & Behavior > Widescreen tool window layout
 - Pycharm documentation ctrl + q for documentation
-
-Official Python Documentation https://docs.python.org/3/
-- Tutorial https://docs.python.org/3/tutorial/index.html
-- Standard Library https://docs.python.org/3/library/index.html
-- Language Reference https://docs.python.org/3/reference/index.html
-
-
-
-create requirements.txt
-- pip freeze > requirements.txt
-
-learn about documentation tools
-- https://matplotlib.org/sampledoc/
-- http://www.sphinx-doc.org/en/master/
-- http://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html
-- https://www.mkdocs.org/
-- Google Docstring Standard https://github.com/google/styleguide/blob/gh-pages/pyguide.md
-
-learn about project folder structure
-- https://drivendata.github.io/cookiecutter-data-science/ talk: http://isaacslavitt.com/2016/07/20/data-science-
-    is-software-talk/
-- https://blog.godatadriven.com/how-to-start-a-data-science-project-in-python
 
 """
 
