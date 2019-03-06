@@ -1,7 +1,7 @@
 '''
 sklearn
 - https://scikit-learn.org/stable/tutorial/index.html
-
+- https://www.dataquest.io/blog/sci-kit-learn-tutorial/
 
 '''
 
