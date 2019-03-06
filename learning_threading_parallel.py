@@ -11,6 +11,8 @@ import sys
 import time
 from threading import Thread
 from multiprocessing import Pool
+import numpy as np
+import pandas as pd
 
 
 # sys get ref count
@@ -46,20 +48,55 @@ def multi_thread_count(count):
     print('time taken in seconds for 2 threads:', end - start)
 
 
-# multiprocessing
-def multi_process_count(count):
-    pool = Pool(processes=2)
-    start = time.time()
-    r1 = pool.apply_async(countdown, [count//2])
-    r2 = pool.apply_async(countdown, [count // 2])
-    pool.close()
-    pool.join()
-    end = time.time()
-    print('tame taken in seconds for 2 multiprocess:', end - start)
+
+
+
+
+
+# https://realpython.com/python-concurrency/
+# create function that converts pandas dataframe to the below code and takes n rows and p columns
+# multivariate stats
+
+def print_df():
+    concurrent = pd.DataFrame({'Concurrency Type': ['Pre-emptive multitasking (threading)',
+                                                    'Cooperative multitasking (asyncio)',
+                                                    'Multiprocessing (multiprocessing)'],
+                               'Switching Decision': [
+                                   'The operating system decides when to switch tasks external to Python.',
+                                   'The tasks decide when to give up control.',
+                                   'The processes all run at the same time on different processors.'],
+                               'Number of Processors': ['1', '1', 'Many']})
+
+    concurrent = pd.concat([pd.DataFrame(np.array([concurrent.columns]), columns=concurrent.columns),
+                            concurrent], ignore_index=True, axis=0)
+
+    # get items length
+    c_c_len = concurrent.select_dtypes('object') \
+        .apply(lambda x: x.str.len(), axis=1)
+
+    c_c_max_len = c_c_len.max(axis=0)
+
+    for idx, c_c in enumerate(concurrent.iterrows()):
+        a0 = c_c[1]['Concurrency Type']
+        a1 = c_c[1]['Switching Decision']
+        a2 = c_c[1]['Number of Processors']
+        m0 = c_c_max_len['Concurrency Type'] + 2
+        m1 = c_c_max_len['Switching Decision'] + 2
+        m2 = c_c_max_len['Number of Processors'] + 2
+        if idx == 1:
+            print('|', '-'*m0, '|', '-'*m1, '|', '-'*m2, '|', sep='')
+        if idx == 0:
+            print(f'|{a0:^{m0}}|{a1:^{m1}}|{a2:^{m2}}|', end='\n')
+        else:
+            print(f'|{a0:<{m0}}|{a1:<{m1}}|{a2:<{m2}}|', end='\n')
+
+
 
 
 
 if __name__ == '__main__':
+
+    print_df()
 
     # input('count:')
     count_in = 50_000_000
@@ -69,4 +106,4 @@ if __name__ == '__main__':
 
     multi_thread_count(count_in)
 
-    multi_process_count(count_in)
+    # multi_process_count(count_in)
