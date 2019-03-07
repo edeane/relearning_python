@@ -25,7 +25,8 @@ X pandas
 X plotting (mostly just seaborn)
 X webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
 - sklearn (tutorials)
-- threading, parallel, multiprocessing
+/ threading, parallel, multiprocessing
+- itertools
 - creating modules and packages (https://docs.python.org/3/distributing/index.html)
 - blackjack project (beat the dealer book)
 - ncaabb project (https://github.com/rodzam/ncaab-stats-scraper)
