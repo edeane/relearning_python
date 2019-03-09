@@ -31,6 +31,7 @@ X webscraping (https://realpython.com/python-web-scraping-practical-introduction
 - blackjack project (beat the dealer book)
 - ncaabb project (https://github.com/rodzam/ncaab-stats-scraper)
 - ufc stats (http://ufcstats.com/statistics/events/completed fighttrax)
+- pinkbike comment sentiment
 - scrape newsletters and create topics
 - django
 - magic methods
@@ -61,6 +62,10 @@ Pycharm setup setting
 - pip install C:/Users/<username> /Downloads/mysqlclient-1.3.13-cp37-cp37m-win_amd64.whl
 - Check Settings > Appearance & Behavior > Widescreen tool window layout
 - Pycharm documentation ctrl + q for documentation
+
+Conda Environment vs Python Virtual Environment
+- conda: type activate relearning_python in Pychamr Terminal
+- venv: already activated...
 
 """
 

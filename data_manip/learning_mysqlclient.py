@@ -59,12 +59,12 @@ def create_sqlalch_str(db_name='sklearn_toy_data'):
     return 'mysql+mysqldb://root:' + password + '@localhost:3306/' + db_name
 
 
-use_mysql_or_sqlalchemy = 'sqlalchemy'
+use_mysql_or_sqlalchemy = 'mysql'
 
 if use_mysql_or_sqlalchemy == 'mysql':
     # connect with MySQLdb package
     print('using mysqlclient')
-    local_con_det = create_con_det('sakila')
+    local_con_det = create_con_det('sklearn_toy_data')
     use_eng_con = MySQLdb.connect(**local_con_det)
 elif use_mysql_or_sqlalchemy == 'sqlalchemy':
     # or connect with sqlalchemy create_engine
@@ -78,6 +78,8 @@ SELECT
 	*
 FROM boston
 ''', con=use_eng_con)
+
+pd.read_sql('show tables', use_eng_con)
 
 print(boston_df.head())
 
