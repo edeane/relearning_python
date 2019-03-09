@@ -5,6 +5,8 @@ https://docs.python.org/3.7/library/concurrency.html
 X https://realpython.com/python-gil/
 - https://realpython.com/python-concurrency/
 
+Works with 3.7.1 and not 3.7.2 for some reason or another...
+
 """
 
 import sys
@@ -37,20 +39,31 @@ def single_count(count):
 
 # multithread
 def multi_thread_count(count):
-    t1 = Thread(target=countdown, args=(25_000_000,))
-    t2 = Thread(target=countdown, args=(25_000_000,))
+    t1 = Thread(target=countdown, args=(count // 4,))
+    t2 = Thread(target=countdown, args=(count // 4,))
+    t3 = Thread(target=countdown, args=(count // 4,))
+    t4 = Thread(target=countdown, args=(count // 4,))
     start = time.time()
     t1.start()
     t2.start()
     t1.join()
     t2.join()
     end = time.time()
-    print('time taken in seconds for 2 threads:', end - start)
+    print('time taken in seconds for 4 threads:', end - start)
 
 
-
-
-
+# multiprocess
+def multi_process_count(count):
+    pool = Pool(processes=4)
+    start = time.time()
+    r1 = pool.apply_async(countdown, [count // 4])
+    r2 = pool.apply_async(countdown, [count // 4])
+    r3 = pool.apply_async(countdown, [count // 4])
+    r4 = pool.apply_async(countdown, [count // 4])
+    pool.close()
+    pool.join()
+    end = time.time()
+    print('time taken in seconds for 4 multi process:', end - start)
 
 
 # https://realpython.com/python-concurrency/
@@ -93,17 +106,18 @@ def print_df():
 
 
 
-
 if __name__ == '__main__':
 
     print_df()
 
     # input('count:')
-    count_in = 50_000_000
-    print('count in __main__ countdown:', count_in)
+    count_in = 100_000_000
 
+    print('running single thread')
     single_count(count_in)
 
+    print('running multi thread')
     multi_thread_count(count_in)
 
-    # multi_process_count(count_in)
+    print('running multi process')
+    multi_process_count(count_in)
