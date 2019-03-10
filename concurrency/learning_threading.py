@@ -1,5 +1,7 @@
 """
 Synchronous Version, Not Threading
+and
+Threading Version
 - https://realpython.com/python-concurrency/
 
 The requests.Session object allows requests to do some fancy networking tricks that speeds things up...

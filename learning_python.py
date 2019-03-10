@@ -25,7 +25,10 @@ X pandas
 X plotting (mostly just seaborn)
 X webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
 - sklearn (tutorials)
-/ threading, parallel, multiprocessing
+X threading, parallel, multiprocessing
+    X “Premature optimization is the root of all evil (or at least most of it) in programming.”)
+    X CPU Bound (multiprocessing) vs I/O Bound (use asyncio when you can and threading when you must)
+- py tricks book
 - itertools
 - creating modules and packages (https://docs.python.org/3/distributing/index.html)
 - blackjack project (beat the dealer book)
@@ -149,6 +152,8 @@ def find_min_max_avg(j_list, p_len):
 find_min_max_avg(j_list, 2)
 find_min_max_avg(j_list, 3)
 find_min_max_avg(j_list, 7)
+
+from standard_py.my_module import *
 
 
 

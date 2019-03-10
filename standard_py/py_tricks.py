@@ -182,3 +182,19 @@ for i in range(len(s)+1):
 powers
 
 
+# the timeit module lets you measure the execution time of small bits of Python code
+import timeit
+
+timeit.timeit('"-".join(str(n) for n in range(100))', number=10_000)
+timeit.timeit('"-".join([str(n) for n in range(100)])', number=10_000)
+timeit.timeit('"-".join(map(str, range(100)))', number=10_000)
+
+
+
+
+
+
+
+
+
+
