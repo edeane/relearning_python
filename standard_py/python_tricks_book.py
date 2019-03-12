@@ -428,7 +428,360 @@ def print_stuff(*args):
 print_stuff('aasdf', 'asdf', 'oiwfjfd', 'ospiudf', 'biwer')
 
 # Chapter 4 Classes & OOP
+# "is" vs "=="
+# "is" if point to same object
+# == if equivalent values
+
+a = [1, 2, 3]
+b = a
+
+a == b
+a is b
+b is a
+
+c = a[:]
+a == c # True
+a is c # False not the same memory
+
+# __repr__ and __str__
+# add __repr__ to every class
 #
+
+class Car(object):
+    def __init__(self, color, mileage):
+        self.color = color
+        self.mileage = mileage
+
+    # def __str__(self):
+    #     return f'a {self.color} car'
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.color!r}, {self.mileage!r})'
+
+
+my_car = Car('red', 100_000)
+print(my_car) # returns __str__ dunder
+str(my_car)
+f'{my_car}'
+my_car # returns __repr__ dunder
+[my_car]
+str(my_car)
+repr(my_car)
+
+import datetime
+
+today = datetime.date.today()
+str(today)
+repr(today)
+
+# 4.3 Defining Your Own Exception Classes
+
+class NameTooShortError(ValueError):
+    pass
+
+
+def validate(name):
+    if len(name) < 10:
+        raise NameTooShortError(name)
+
+
+validate('eddie')
+
+
+# 4.4 Cloning Objects for Fun and Profit
+# Assignment statements in Python do not create copies
+# just bind names to an object
+# shallow copy = won't create copy of child objects
+# deep copy = creates copy of all child objects
+
+orig_list = [1, 2, 3]
+orig_dict = {'a': 1,
+             'b': 2,
+             'c': 3}
+orig_set = {1, 2, 3}
+
+new_list = list(orig_list)
+new_dict = dict(orig_dict)
+new_set = set(orig_set)
+
+hex(id(orig_list))
+f'0x{id(orig_list):x}'
+f'{id(new_list):x}'
+
+
+xs = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ys = list(xs)
+xs.append(['new sublist'])
+xs
+ys
+xs[1][0] = 'X'
+
+
+import copy
+
+xs = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# copy.copy() is shallow copy
+# copy.deepcopy is deep copy
+
+zs = copy.deepcopy(xs)
+zs
+xs.append(['new sublist'])
+xs[1][0] = 'X'
+xs
+zs
+
+
+class Point(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return f'Point({self.x!r}, {self.y!r})'
+
+
+a_p = Point(23, 42)
+a_p
+b_p = copy.copy(a_p)
+b_p
+a_p is b_p
+a_p == b_p
+
+
+class Rectangle(object):
+    def __init__(self, topleft, bottomright):
+        self.topleft = topleft
+        self.bottomright = bottomright
+
+    def __repr__(self):
+        return f'Rectangle({self.topleft!r}, {self.bottomright!r})'
+
+
+rect = Rectangle(Point(0, 1), Point(5, 6))
+srect = copy.copy(rect)
+rect
+srect
+
+rect.topleft.x = 999
+rect
+srect
+
+drect = copy.deepcopy(rect)
+drect
+rect.bottomright.y = 422
+rect
+drect
+srect
+
+
+# 4.5 Abstract Base Classes Keep Inheritance in Check
+# help make class hierarchies easier to maintain
+
+from abc import ABCMeta, abstractmethod
+
+
+class Base(metaclass=ABCMeta):
+    @abstractmethod
+    def foo(self):
+        pass
+
+    @abstractmethod
+    def bar(self):
+        pass
+
+
+class Concrete(Base):
+    def foo(self):
+        pass
+
+    def bar(self):
+        pass
+
+
+issubclass(Concrete, Base)
+
+c = Concrete()
+
+
+
+# 4.6 Namedtuples
+# immutable, fix the issue of selecting the wrong index
+# write once, ready many
+# a memory efficent shortcut ot defining an immutable class manually
+# _ named methods and attributes are to avoid collision of
+
+from collections import namedtuple
+import json
+
+Car = namedtuple('Car', ['color',
+                         'mileage',
+                         'year',
+                         'make',
+                         'model',
+                         ])
+
+my_car = Car('orange', 100_000, 1999, 'ford', 'mustang')
+my_car.make
+my_car.model
+color, mileage, _, _, _ = my_car
+color
+mileage
+print(*my_car)
+
+{my_car: 'abc123'}
+json.dumps(my_car._asdict())
+
+
+# class vs instance variables
+
+class Dog(object):
+    num_legs = 4
+
+    def __init__(self, name):
+        self.name = name
+
+jack = Dog('jack')
+jill = Dog('jill')
+jack.num_legs
+jill.num_legs
+# jack.num_legs = 6
+Dog.num_legs = 8
+
+
+# 4.8 Instance, Class, and Static Methods!
+
+
+class MyClass:
+
+    # normal instance method that can change the self instance of the class
+    # can also modify self.__class__ attribute
+    def method(self):
+        return 'instance mehthod called', self
+
+    # points to cls paramter not self
+    # modifies all instances of the class
+    @classmethod
+    def classmethod(cls):
+        return 'class method called', cls
+
+    # primarily for namespacing your methods
+    # cannot modify object state or class
+    @staticmethod
+    def staticmethod():
+        return 'static method called'
+
+
+
+obj = MyClass()
+obj.method()
+obj.classmethod()
+obj.staticmethod()
+
+# error because python cannot call the self instance
+MyClass.method()
+MyClass.classmethod()
+MyClass.staticmethod()
+
+import math
+
+class Pizza:
+
+    def __init__(self, radius, ingredients):
+        self.radius = radius
+        self.ingredients = ingredients
+
+    def __repr__(self):
+        return f'Pizza({self.radius!r}, {self.ingredients!r})'
+
+    @classmethod
+    def margherita(cls):
+        return cls(['mozzarella', 'tomatoes'])
+
+    @classmethod
+    def prosciutto(cls):
+        return cls(['mozzarella', 'tomatoes', 'ham'])
+
+    def area(self):
+        return self.circle_area(self.radius)
+
+    @staticmethod
+    def circle_area(r):
+        return r ** 2 * math.pi
+
+
+
+
+custom_pizza = Pizza(12, ['mozzarella', 'tomatoes', 'ham'])
+custom_pizza
+custom_pizza.area()
+custom_pizza.circle_area(12)
+
+
+m_pizz = Pizza.margherita()
+m_pizz
+m_pizz.ingredients
+Pizza.prosciutto().ingredients
+
+m_pizz.circle_area(18)
+
+
+# 5.1 Dictionaries, Maps, Hashtables
+# strings and number keys
+# now dicts are ordered as of 3.7 due to CPython, but better to be explicit and use OrderedDict if order is needed
+
+phonebook = {
+    'bob': 7387,
+    'alice': 3719,
+    'jack': 7052,
+}
+
+
+squares = {x: x * x for x in range(6)}
+
+phonebook['alice']
+squares[3]
+
+from collections import OrderedDict, defaultdict, ChainMap
+
+# read only dict
+from types import MappingProxyType
+
+
+d = OrderedDict(one=1, two=2, three=3)
+d = OrderedDict([('one', 1), ('two', 2), ('three', 3)])
+d
+d.keys()
+
+dd = defaultdict(int)
+dd
+s = 'mississippi'
+for k in s:
+    dd[k] += 1
+
+dd['p']
+dd['r']
+
+
+dict1 = {'one': 1,
+         'two': 2}
+
+dict2 = {'three': 3,
+         'four': 4}
+
+chain = ChainMap(dict1, dict2)
+
+chain['two']
+chain['five']
+
+
+read_only = MappingProxyType(dict1)
+read_only['one']
+read_only['three'] = 3
+
+
+
+
 
 
 

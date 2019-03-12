@@ -28,7 +28,7 @@ X webscraping (https://realpython.com/python-web-scraping-practical-introduction
 X threading, parallel, multiprocessing
     X “Premature optimization is the root of all evil (or at least most of it) in programming.”)
     X CPU Bound (multiprocessing) vs I/O Bound (use asyncio when you can and threading when you must)
-- py tricks book
+/ py tricks book
 - itertools
 - creating modules and packages (https://docs.python.org/3/distributing/index.html)
 - blackjack project (beat the dealer book)
