@@ -192,9 +192,9 @@ timeit.timeit('"-".join(map(str, range(100)))', number=10_000)
 
 
 
+# inplace value swapping
 
-
-
-
-
-
+x = 'eddie'
+y = 'deane'
+x, y = y, x
+print(f'({x!r}, {y!r})')
