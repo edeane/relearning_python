@@ -781,6 +781,135 @@ read_only['three'] = 3
 
 
 
+# 6.7 Iterator Chains
+
+
+
+def integers():
+    for i in range(1, 9):
+        yield i
+
+def squared(seq):
+    for i in seq:
+        yield i * i
+
+def negated(seq):
+    for i in seq:
+        yield -i
+
+integers_g = range(1, 9)
+squared_g = (i * i for i in integers_g)
+negated_g = (-i for i in squared_g)
+
+
+chain = negated(squared(integers()))
+next(chain)
+
+for i in chain:
+    print(i)
+
+for i in negated_g:
+    print(i)
+
+
+
+# 7 Dictionary Tricks
+
+# 7.1 Dictionary Default Values
+
+name_for_userid = {
+    382: 'Alice',
+    950: 'Bob',
+    590: 'Dilbert',
+}
+
+def greeting(userid):
+    return f'Hi {name_for_userid.get(userid, "there")}'
+
+
+greeting(950)
+greeting(4242)
+
+# 7.2 Sorting Dictionaries for Fun and Profit
+# Press Ctrl + P to see parameter info
+# https://www.jetbrains.com/help/pycharm/viewing-reference-information.html
+
+xs = {'a': 4, 'c': 2, 'b': 3, 'd': 1}
+sorted(xs.items())
+sorted(xs.items(), key=lambda x: x[1], reverse=True)
+
+import operator
+
+xs.items()
+
+sorted(xs.items(), key=operator.itemgetter(1))
+
+
+sorted(xs.items(), key=lambda x: abs(x[1]))
+
+
+# 7.3
+
+def handle_a(a, b):
+    return a + b
+
+def handle_b(a, b):
+    return (a * a) + (b * b)
+
+def handle_default(a, b):
+    return (a * 2) + (b * 2)
+
+func_dict = {
+    'cond_a': handle_a,
+    'cond_b': handle_b,
+}
+
+conds = ['cond_a', 'cond_b', 'cond_c']
+for cond in conds:
+    print(func_dict.get(cond, handle_default)(3, 4))
+
+
+def dispatch_dict(operator, x, y):
+    return {
+        'add': lambda: x + y,
+        'sub': lambda: x - y,
+        'mul': lambda: x * y,
+        'div': lambda: x / y,
+    }.get(operator, lambda: None)()
+
+dispatch_dict('mul', 2, 8)
+
+
+# 7.4 The Craziest Dict Expression in the West
+
+xs = {True: 'yes', 1: 'no', 1.0: 'maybe'}
+xs
+
+
+xs = dict()
+xs[True] = 'yes'
+xs[1] = 'no'
+xs[1.0] = 'maybe'
+xs
+
+True == 1 == 1.0
+
+['no', 'yes'][True]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
