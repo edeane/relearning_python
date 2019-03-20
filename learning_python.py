@@ -12,6 +12,8 @@ Tutorial https://docs.python.org/3/tutorial/index.html
 Standard Library https://docs.python.org/3/library/index.html
 Language Reference https://docs.python.org/3/reference/index.html
 
+Python 3 Module of the Week
+https://pymotw.com/3/index.html
 
 
 relearing packages order:
@@ -37,9 +39,9 @@ X py tricks book
 - pinkbike comment sentiment
 - scrape newsletters and create topics
 - django
-- magic methods
 - decorators (property, classmethod, staticmethod)
 - more standard library https://docs.python.org/3/library/index.html
+- recursion https://realpython.com/python-thinking-recursively/
 
 create requirements.txt
 X pip freeze > requirements.txt
