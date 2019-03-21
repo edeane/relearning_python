@@ -31,8 +31,8 @@ X threading, parallel, multiprocessing
     X “Premature optimization is the root of all evil (or at least most of it) in programming.”)
     X CPU Bound (multiprocessing) vs I/O Bound (use asyncio when you can and threading when you must)
 X py tricks book
-- itertools
-- creating modules and packages (https://docs.python.org/3/distributing/index.html)
+X itertools
+X creating modules and packages
 - blackjack project (beat the dealer book)
 - ncaabb project (https://github.com/rodzam/ncaab-stats-scraper)
 - ufc stats (http://ufcstats.com/statistics/events/completed fighttrax)
