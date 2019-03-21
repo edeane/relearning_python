@@ -330,10 +330,97 @@ list(it.islice(cycle, 10))
 # Determine the maximum daily gain, daily loss (in percent change), and the longest growth streak
 
 
+from collections import namedtuple
+import csv
+from datetime import datetime
+from pprint import pprint
+import functools as ft
+import itertools as it
 
 
+class DataPoint(namedtuple('DataPoint', ['date', 'value'])):
+    __slots__ = ()
+
+    def __le__(self, other):
+        return self.value <= other.value
+
+    def __lt__(self, other):
+        return self.value < other.value
+
+    def __gt__(self, other):
+        return self.value > other.value
 
 
+def read_prices(csvfile, _strptime=datetime.strptime):
+    with open(csvfile) as infile:
+        reader = csv.DictReader(infile)
+        for row in reader:
+            yield DataPoint(date=_strptime(row['Date'], '%Y-%m-%d').date(),
+                            value=float(row['Adj Close']))
+
+prices = tuple(read_prices('data/SP500.csv'))
+len(prices)
+pprint(prices[:10])
+pprint(prices[-10:])
+
+
+# Determine the maximum daily gain
+
+tuple(DataPoint(day.date, 100*(day.value/prev_day.value - 1.)) for day, prev_day in zip(prices[1:], prices))
+
+gains = []
+for day, prev_day in zip(prices[1:], prices):
+    gains.append(DataPoint(day.date, 100*(day.value/prev_day.value - 1)))
+
+gains = tuple(gains)
+pprint(gains[:10])
+pprint(prices[:10])
+
+max_gain = DataPoint(date=None, value=0)
+for data_point in gains:
+    max_gain = max(data_point, max_gain)
+
+print(max_gain)
+
+
+zdp = DataPoint(None, 0)
+print(ft.reduce(max, gains, zdp))
+print(ft.reduce(min, gains, zdp))
+
+
+import numpy as np
+import pandas as pd
+
+sp_df = pd.read_csv('data/SP500.csv')
+
+sp_df['gains'] = 100 * sp_df['Adj Close'].pct_change()
+sp_df.head()
+
+sp_df.loc[sp_df['gains'] == sp_df['gains'].max(), ['Date', 'gains']]
+sp_df.loc[sp_df['gains'] == sp_df['gains'].min(), ['Date', 'gains']]
+sp_df['gains_sign'] = sp_df['gains'].apply(np.sign)
+sp_df['streak'] = sp_df['gains_sign'].groupby((sp_df['gains_sign'] != sp_df['gains_sign'].shift()).cumsum()).cumsum()
+
+
+def get_streak(df, col_name='streak', max_or_min='max'):
+    """Calc streak"""
+    if max_or_min not in ['max', 'min']:
+        raise ValueError("max_or_min must be either 'max'' or 'min'")
+
+    if max_or_min == 'max':
+        n = df[col_name].max()
+    elif max_or_min == 'min':
+        n = df[col_name].min()
+
+    idx_to = df[df[col_name] == n].index[0] + 1
+    idx_from = int(idx_to - abs(n))
+    from_date = sp_df.loc[idx_from, 'Date']
+    to_date = sp_df.loc[idx_to, 'Date']
+    print(f'From: {from_date} To: {to_date} {max_or_min.title()} Streak: {int(n)}')
+
+
+get_streak(sp_df, max_or_min='max')
+get_streak(sp_df, max_or_min='min')
 
 
 
