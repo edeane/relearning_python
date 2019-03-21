@@ -781,6 +781,7 @@ read_only['three'] = 3
 
 
 
+
 # 5.2 Array Data Structures
 
 # lists can hold any object and are mutable
@@ -940,7 +941,7 @@ while True:
         break
 
 
-# Generators Are Simplified Iterators
+# 6.5 Generators Are Simplified Iterators
 
 
 def bounded_repeater(value, max_repeats):
@@ -967,6 +968,174 @@ for y in (x * x for x in range(20) if x % 2 == 0):
 
 
 sum(x * x for x in range(20) if x % 2 == 0)
+
+
+# 6.7 Iterator Chains
+
+
+
+def integers():
+    for i in range(1, 9):
+        yield i
+
+def squared(seq):
+    for i in seq:
+        yield i * i
+
+def negated(seq):
+    for i in seq:
+        yield -i
+
+integers_g = range(1, 9)
+squared_g = (i * i for i in integers_g)
+negated_g = (-i for i in squared_g)
+
+
+chain = negated(squared(integers()))
+next(chain)
+
+for i in chain:
+    print(i)
+
+for i in negated_g:
+    print(i)
+
+
+
+# 7 Dictionary Tricks
+
+# 7.1 Dictionary Default Values
+
+name_for_userid = {
+    382: 'Alice',
+    950: 'Bob',
+    590: 'Dilbert',
+}
+
+def greeting(userid):
+    return f'Hi {name_for_userid.get(userid, "there")}'
+
+
+greeting(950)
+greeting(4242)
+
+# 7.2 Sorting Dictionaries for Fun and Profit
+# Press Ctrl + P to see parameter info
+# https://www.jetbrains.com/help/pycharm/viewing-reference-information.html
+
+xs = {'a': 4, 'c': 2, 'b': 3, 'd': 1}
+sorted(xs.items())
+sorted(xs.items(), key=lambda x: x[1], reverse=True)
+
+import operator
+
+xs.items()
+
+sorted(xs.items(), key=operator.itemgetter(1))
+
+
+sorted(xs.items(), key=lambda x: abs(x[1]))
+
+
+# 7.3
+
+def handle_a(a, b):
+    return a + b
+
+def handle_b(a, b):
+    return (a * a) + (b * b)
+
+def handle_default(a, b):
+    return (a * 2) + (b * 2)
+
+func_dict = {
+    'cond_a': handle_a,
+    'cond_b': handle_b,
+}
+
+conds = ['cond_a', 'cond_b', 'cond_c']
+for cond in conds:
+    print(func_dict.get(cond, handle_default)(3, 4))
+
+
+def dispatch_dict(operator, x, y):
+    return {
+        'add': lambda: x + y,
+        'sub': lambda: x - y,
+        'mul': lambda: x * y,
+        'div': lambda: x / y,
+    }.get(operator, lambda: None)()
+
+dispatch_dict('mul', 2, 8)
+
+
+# 7.4 The Craziest Dict Expression in the West
+
+xs = {True: 'yes', 1: 'no', 1.0: 'maybe'}
+xs
+
+
+xs = dict()
+xs[True] = 'yes'
+xs[1] = 'no'
+xs[1.0] = 'maybe'
+xs
+
+True == 1 == 1.0
+
+['no', 'yes'][True]
+['no', 'yes'][False]
+'abc'[True]
+
+(hash(True), hash(1), hash(1.0))
+
+xs = {'a': 1, 'b': 2}
+ys = {'b': 3, 'c': 4}
+
+
+zs = {**xs, **ys}
+zs
+
+# Pretty Printing Dicts
+
+from pprint import pprint
+import json
+
+print(json.dumps(zs, indent=4, sort_keys=True))
+pprint(zs, indent=1, width=-1, depth=4)
+
+
+mapping = {'a': 23, 'b': 42, 'c': 12648430, 'd': set([1, 2, 3])}
+pprint(mapping, width=1)
+
+import datetime
+
+pprint(dir(datetime), width=-1)
+pprint(dir(datetime.datetime), width=-1)
+pprint(dir(datetime.date), width=-1)
+
+
+pprint([_ for _ in dir(datetime) if 'date' in _.lower()], width=-1)
+help(datetime.date.fromtimestamp)
+
+
+def greet(name):
+    return 'Hello, ' + name + '!'
+
+greet.__code__
+greet.__code__.co_consts
+greet.__code__.co_varnames
+
+# with dis.dis we can see the easier to read representation of the bytecode
+
+import dis
+
+dis.dis(greet)
+
+
+
+
+
 
 
 
