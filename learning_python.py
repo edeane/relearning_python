@@ -156,6 +156,13 @@ find_min_max_avg(j_list, 7)
 from standard_py.my_module import *
 
 
+import numpy as np
+
+print(-5 ** 2)
+print((-5) ** 2)
+print(np.square(-5))
+
+
 
 if __name__ == '__main__':
     print('this will not run when the module is imported')

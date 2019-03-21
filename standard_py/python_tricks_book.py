@@ -781,8 +781,192 @@ read_only['three'] = 3
 
 
 
+# 5.2 Array Data Structures
+
+# lists can hold any object and are mutable
+# tuples can hold any object and are are immutable
+# array.arrays are basic single typed arrays
+
+from array import array
 
 
+arr = array('f', (1, 1.5, 2, 2.5))
+arr
+arr[0] = 25
+arr[0] = 'hello'
+arr.append(42)
+arr
+
+from typing import NamedTuple
+
+
+class Car(NamedTuple):
+    color: str
+    mileage: float
+    automatic: bool
+
+car1 = Car('red', 100_000, True)
+car1
+car1.mileage = 50_000 # immutable
+
+'e' in ['a', 'i', 'o', 'u']
+'e' in ['a', 'e', 'i', 'o', 'u']
+'e' in {'a', 'e', 'i', 'o', 'u'}
+vowels = {'a', 'e', 'i', 'o', 'u'}
+letters = set('alice')
+letters.intersection(vowels)
+vowels.add('y')
+vowels
+
+from collections import Counter
+
+inventory = Counter()
+loot = {'sword': 1,
+        'bread': 3}
+
+inventory.update(loot)
+inventory
+more_loot = {'sword': 1, 'apple': 1}
+inventory.update(more_loot)
+inventory
+
+
+# stacks LIFO
+# queue FIFO
+
+# stack
+s = ['eat', 'sleep', 'code']
+s.pop()
+s.pop()
+s
+
+
+# stack
+from collections import deque
+
+s = deque()
+s.append('eat')
+s.append('sleep')
+s.append('code')
+s.pop()
+s.pop()
+
+# queue
+
+s = deque()
+s.append('eat')
+s.append('sleep')
+s.append('code')
+s.popleft()
+s.popleft()
+s
+
+# from queue import Queue
+# from multiprocessing import Queue
+
+# priority queues
+
+q = [(2, 'code'), (1, 'eat'), (3, 'sleep')]
+q.sort(reverse=True)
+while q:
+    print(q.pop())
+q
+
+from queue import PriorityQueue
+
+q = [(2, 'code'), (1, 'eat'), (3, 'sleep')]
+pq = PriorityQueue()
+pq.put(q[0])
+pq.put(q[1])
+pq.put(q[2])
+pq
+
+while not pq.empty():
+    print(pq.get())
+
+
+
+# Loops
+
+items = ['a', 'b', 'c', 'd']
+
+for i, item in enumerate(items):
+    print(f'{i}: {item}')
+
+
+
+[x * x for x in range(100) if x % 2 == 0]
+
+
+lst = [1, 2, 3, 4, 5]
+lst[1:4:1]
+lst[1:4:2]
+lst[::2]
+lst[::-1]
+
+# __nect__ __iter__
+
+class BoundedRepeater:
+    def __init__(self, value, max_repeats):
+        self.value = value
+        self.max_repeats = max_repeats
+        self.count = 0
+
+    def __repr__(self):
+        return f'BoundedRepeater({self.value}, {self.max_repeats})'
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.count >= self.max_repeats:
+            raise StopIteration
+        self.count += 1
+        return self.value
+
+
+reper = BoundedRepeater('hello', 4)
+reper
+
+for repe in reper:
+    print(repe)
+
+
+while True:
+    try:
+        print(next(reper))
+    except StopIteration:
+        print('break')
+        break
+
+
+# Generators Are Simplified Iterators
+
+
+def bounded_repeater(value, max_repeats):
+    for i in range(max_repeats):
+        yield value
+
+
+a_gen = bounded_repeater('hello', 5)
+for gen in a_gen:
+    print(gen)
+
+
+b_gen = ('hello there' for i in range(5))
+for j in b_gen:
+    print(j)
+
+even_squ = (x * x for x in range(100) if x % 2 == 0)
+for i in even_squ:
+    print(i)
+
+
+for y in (x * x for x in range(20) if x % 2 == 0):
+    print(y)
+
+
+sum(x * x for x in range(20) if x % 2 == 0)
 
 
 
