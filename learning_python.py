@@ -7,6 +7,9 @@ https://gto76.github.io/python-cheatsheet/
 Learn Python in Y minutes
 https://learnxinyminutes.com/docs/python3/
 
+Python Cheatsheet
+https://www.pythonsheets.com/index.html
+
 Official Python Documentation https://docs.python.org/3/
 Tutorial https://docs.python.org/3/tutorial/index.html
 Standard Library https://docs.python.org/3/library/index.html
@@ -25,6 +28,7 @@ X unittests (https://www.jetbrains.com/help/pycharm/testing-your-first-python-ap
 X numpy
 X pandas
 X plotting (mostly just seaborn)
+- plotly dash
 X webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
 - sklearn (tutorials)
 X threading, parallel, multiprocessing
