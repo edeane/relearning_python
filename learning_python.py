@@ -28,7 +28,7 @@ X unittests (https://www.jetbrains.com/help/pycharm/testing-your-first-python-ap
 X numpy
 X pandas
 X plotting (mostly just seaborn)
-- plotly dash
+X plotly dash
 X webscraping (https://realpython.com/python-web-scraping-practical-introduction/)
 - sklearn (tutorials)
 X threading, parallel, multiprocessing

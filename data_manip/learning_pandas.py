@@ -40,6 +40,9 @@ from pprint import pprint
 import timeit
 import time
 
+pd.set_option('display.max_rows', 10)
+pd.set_option('display.max_columns', 100)
+
 df = pd.DataFrame({'AAA': [4, 5, 6, 7],
                    'BBB': [10, 20, 30, 40],
                    'CCC': [100, 50, -30, -50]})
