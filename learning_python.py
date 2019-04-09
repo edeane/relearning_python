@@ -168,7 +168,68 @@ print(-5 ** 2)
 print((-5) ** 2)
 print(np.square(-5))
 
+# ---- one edit away -----
+# insert one char
+# remove one char
+# replace one char
 
+import string
+
+
+
+
+def one_edit_away(a, b):
+
+    letters = list(string.ascii_lowercase)
+
+    def insert_one(j, k):
+        for l in letters:
+            for idx in range(len(j)+1):
+                j_plus_l = j[:idx] + l + j[idx:]
+                if j_plus_l == k:
+                    print('insert one')
+                    return True
+        return False
+
+    def remove_one(j, k):
+        for idx in range(len(j)):
+            j_remove = j[:idx] + j[idx + 1:]
+            if j_remove == k:
+                print('remove one')
+                return True
+        return False
+
+    def replace_one(j, k):
+        for l in letters:
+            for idx in range(len(j)):
+                j_replace_l = j[:idx] + l + j[idx + 1:]
+                if j_replace_l == k:
+                    print('replace one')
+                    return True
+        return False
+
+    return (insert_one(a, b) or insert_one(b, a)
+            or remove_one(a, b) or remove_one(b, a)
+            or replace_one(a, b) or replace_one(b, a))
+
+
+one_edit_away('pea', 'peas')
+one_edit_away('peas', 'pea')
+one_edit_away('peet', 'pet')
+one_edit_away('pttt', 'pet')
+
+ex_lst = [('pea', 'peas'), ('pea', 'fleas'), ('pea', 'lea'), ('pea', 'seas'), ('peat', 'seat')]
+
+for a, b in ex_lst:
+    print(a, b)
+    print(one_edit_away(a, b))
+
+
+def my_add(a: int, b: int) -> int:
+    return a + b
+
+my_add(5, 6)
+my_add('a', 6)
 
 
 if __name__ == '__main__':
