@@ -1,14 +1,14 @@
 """
 pandas
 
-# pandas tutorials
+pandas tutorials
 http://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
 https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html
 
-# good pandas cheat sheet
+good pandas cheat sheet
 https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 
-# minimally sufficient pandas
+minimally sufficient pandas
 https://medium.com/dunder-data/minimally-sufficient-pandas-a8e67f2a2428
 Attributes (columns, dtypes, index, shape, T, values)
 
@@ -30,6 +30,9 @@ select_dtypes, shift, sort_index, sort_values, to_csv, to_json, to_sql)
 
 Functions (pd.concat, pd.crosstab, pd.cut, pd.qcut, pd.read_csv, pd.read_json, pd.read_sql, pd.to_datetime,
 pd.to_timedelta)
+
+10 pandas tricks
+https://towardsdatascience.com/10-python-pandas-tricks-that-make-your-work-more-efficient-2e8e483808ba
 
 """
 
@@ -553,29 +556,38 @@ pd.qcut(df['a'], 3)
 
 
 
+# 10 pandas tricks
+# https://towardsdatascience.com/10-python-pandas-tricks-that-make-your-work-more-efficient-2e8e483808ba
 
 
+import seaborn as sns
+
+df = sns.load_dataset('mpg')
+df.head()
+df.info()
+df.describe()
+df.dtypes
+
+# select dtypes
+df.dtypes.value_counts()
+df.select_dtypes(include=['float64', 'int64'])
+df.select_dtypes(include=['object'])
+
+# copy
+df1 = df.copy(deep=True)
+df1
 
 
+# map
+df['cylinders'].value_counts(normalize=True)
+df['cylinders'].value_counts()
 
 
+cyl_map = {4: 'four', 8: 'eight', 6: 'six', 3: 'three', 5: 'five'}
+df['cylinders'].map(cyl_map)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+df.isnull().sum(axis=0)
 
 
 
