@@ -198,3 +198,28 @@ x = 'eddie'
 y = 'deane'
 x, y = y, x
 print(f'({x!r}, {y!r})')
+
+
+# antigravity xkcd
+# press F4 to view source code
+import antigravity
+
+
+# collection Counter
+from collections import Counter
+
+c = Counter('helloworld')
+c
+c.most_common(2)
+
+
+
+
+
+
+
+
+
+
+
+
