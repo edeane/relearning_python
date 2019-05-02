@@ -37,6 +37,7 @@ X threading, parallel, multiprocessing
 X py tricks book
 X itertools
 X creating modules and packages
+X importing modules and packages https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html
 - blackjack project (beat the dealer book)
 - ncaabb project (https://github.com/rodzam/ncaab-stats-scraper)
 - ufc stats (http://ufcstats.com/statistics/events/completed fighttrax)
@@ -266,7 +267,15 @@ fooie(30)
 
 import antigravity
 
+import itertools as it
 
+perms = list(it.permutations('ABCD', 3))
+combs = list(it.combinations('ABCD', 3))
+
+from pprint import pprint
+
+pprint(perms)
+pprint(combs)
 
 
 
