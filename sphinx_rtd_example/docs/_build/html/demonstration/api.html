@@ -1,0 +1,722 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. test_py_module &mdash; Sphinx RTD Example 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Long Sticky Nav" href="long.html" />
+    <link rel="prev" title="4. Lists &amp; Tables" href="lists_tables.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Sphinx RTD Example
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Demonstation Documents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="structure.html">1. Structural Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html#structural-elements-2">2. Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">3. Paragraph Level Markup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists_tables.html">4. Lists &amp; Tables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">test_py_module</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#test">5.1. Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-google">5.2. Example Google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generated-index">5.3. Generated Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-parameter-args">5.4. Optional parameter args</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data">5.5. Data</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">This is an incredibly long caption for a long menu</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="long.html">1. Long Sticky Nav</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx RTD Example</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">test_py_module</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/demonstration/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="test-py-module">
+<h1><a class="toc-backref" href="#id5">5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">test_py_module</span></code></a><a class="headerlink" href="#test-py-module" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#test-py-module" id="id5"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test_py_module</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#test" id="id6">Test</a></p></li>
+<li><p><a class="reference internal" href="#example-google" id="id7">Example Google</a></p></li>
+<li><p><a class="reference internal" href="#generated-index" id="id8">Generated Index</a></p></li>
+<li><p><a class="reference internal" href="#optional-parameter-args" id="id9">Optional parameter args</a></p></li>
+<li><p><a class="reference internal" href="#data" id="id10">Data</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<span class="target" id="module-test_py_module.test"></span><div class="section" id="test">
+<h2><a class="toc-backref" href="#id6">5.1. Test</a><a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<p>Test Module for sphinx_rtd_theme.</p>
+<dl class="class">
+<dt id="test_py_module.test.Foo">
+<em class="property">class </em><code class="descclassname">test_py_module.test.</code><code class="descname">Foo</code><span class="sig-paren">(</span><em>qux</em>, <em>spam=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/test.html#Foo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.test.Foo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Docstring for class Foo.</p>
+<p>This text tests for the formatting of docstrings generated from output
+<code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code>. Which contain reST, but sphinx nests it in the
+<code class="docutils literal notranslate"><span class="pre">&lt;dl&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;dt&gt;</span></code> tags. Also, <code class="docutils literal notranslate"><span class="pre">&lt;tt&gt;</span></code> is used for class, method names
+and etc, but those will <em>always</em> have the <code class="docutils literal notranslate"><span class="pre">.descname</span></code> or
+<code class="docutils literal notranslate"><span class="pre">.descclassname</span></code> class.</p>
+<p>Normal <code class="docutils literal notranslate"><span class="pre">&lt;tt&gt;</span></code> (like the &lt;tt&gt; I just wrote here) needs to be shown with
+the same style as anything else with <code class="docutils literal notranslate"><span class="pre">``this</span> <span class="pre">type</span> <span class="pre">of</span> <span class="pre">markup``</span></code>.</p>
+<p>It’s common for programmers to give a code example inside of their
+docstring:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">test_py_module</span> <span class="k">import</span> <span class="n">Foo</span>
+
+<span class="n">myclass</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="n">myclass</span><span class="o">.</span><span class="n">dothismethod</span><span class="p">(</span><span class="s1">&#39;with this argument&#39;</span><span class="p">)</span>
+<span class="n">myclass</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">myclass</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here is a link to <a class="reference internal" href="#test_py_module.test.Foo.capitalize" title="test_py_module.test.Foo.capitalize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">capitalize()</span></code></a>.
+Here is a link to <a class="reference internal" href="#test_py_module.test.Foo.__init__" title="test_py_module.test.Foo.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+<dl class="method">
+<dt id="test_py_module.test.Foo.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>qux</em>, <em>spam=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/test.html#Foo.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.test.Foo.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the Foo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>qux</strong> (<em>string</em>) – The first argument to initialize class.</p></li>
+<li><p><strong>spam</strong> (<em>bool</em>) – Spam me yes or no…</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.test.Foo.__weakref__">
+<code class="descname">__weakref__</code><a class="headerlink" href="#test_py_module.test.Foo.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_py_module.test.Foo.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>val1</em>, <em>val2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/test.html#Foo.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.test.Foo.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the added values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val1</strong> (<em>int</em>) – First number to add.</p></li>
+<li><p><strong>val2</strong> (<em>int</em>) – Second number to add.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_py_module.test.Foo.another_function">
+<code class="descname">another_function</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/test.html#Foo.another_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.test.Foo.another_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Here is another function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>int</em>) – The number of green hats you own.</p></li>
+<li><p><strong>b</strong> (<em>int</em>) – The number of non-green hats you own.</p></li>
+<li><p><strong>kwargs</strong> (<em>float</em>) – Additional keyword arguments. Each keyword parameter
+should specify the name of your favorite cuisine.
+The values should be floats, specifying the mean price
+of your favorite dish in that cooking style.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 2-tuple.  The first element is the mean price of all dishes
+across cuisines.  The second element is the total number of
+hats you own: <span class="math notranslate nohighlight">\(a + b\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – When <code class="docutils literal notranslate"><span class="pre">a</span></code> is not an integer.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0: </span>This was added in 1.0</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.0: </span>This was changed in 2.0</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.0: </span>This is deprecated since 3.0</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.test.Foo.bar">
+<code class="descname">bar</code><em class="property"> = 1</em><a class="headerlink" href="#test_py_module.test.Foo.bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Doc comment for class attribute Foo.bar.
+It can have multiple lines.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.test.Foo.baz">
+<code class="descname">baz</code><em class="property"> = 2</em><a class="headerlink" href="#test_py_module.test.Foo.baz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Docstring for class attribute Foo.baz.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_py_module.test.Foo.capitalize">
+<code class="descname">capitalize</code><span class="sig-paren">(</span><em>myvalue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/test.html#Foo.capitalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.test.Foo.capitalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string as uppercase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>myvalue</strong> (<em>string</em>) – String to change</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.test.Foo.flox">
+<code class="descname">flox</code><em class="property"> = 1.5</em><a class="headerlink" href="#test_py_module.test.Foo.flox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Doc comment for Foo.flox. One line only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.test.Foo.qux">
+<code class="descname">qux</code><em class="property"> = None</em><a class="headerlink" href="#test_py_module.test.Foo.qux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Doc comment for instance attribute qux.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.test.Foo.spam">
+<code class="descname">spam</code><em class="property"> = None</em><a class="headerlink" href="#test_py_module.test.Foo.spam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Docstring for instance attribute spam.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<span class="target" id="module-test_py_module.example_google"></span><div class="section" id="example-google">
+<h2><a class="toc-backref" href="#id7">5.2. Example Google</a><a class="headerlink" href="#example-google" title="Permalink to this headline">¶</a></h2>
+<p>Example Google style docstrings.</p>
+<p>This module demonstrates documentation as specified by the <a class="reference external" href="http://google.github.io/styleguide/pyguide.html">Google Python
+Style Guide</a>. Docstrings may extend over multiple lines. Sections are created
+with a section header and a colon followed by a block of indented text. This file
+can be found <a href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html#example-google" target="_blank">here</a>.</p>
+<dl>
+<dt>Example:</dt><dd><p>Examples can be given using either the <code class="docutils literal notranslate"><span class="pre">Example</span></code> or <code class="docutils literal notranslate"><span class="pre">Examples</span></code>
+sections. Sections support any reStructuredText formatting, including
+literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python example_google.py
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Section breaks are created by resuming unindented text. Section breaks
+are also implicitly created anytime a new section starts.</p>
+<dl class="simple">
+<dt>Todo:</dt><dd><ul class="simple">
+<li><p>For module TODOs</p></li>
+<li><p>You have to also use <code class="docutils literal notranslate"><span class="pre">sphinx.ext.todo</span></code> extension</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="class">
+<dt id="test_py_module.example_google.ExampleClass">
+<em class="property">class </em><code class="descclassname">test_py_module.example_google.</code><code class="descname">ExampleClass</code><span class="sig-paren">(</span><em>param1</em>, <em>param2</em>, <em>param3</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#ExampleClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.ExampleClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>The summary line for a class docstring should fit on one line.</p>
+<p>If the class has public attributes, they may be documented here
+in an <code class="docutils literal notranslate"><span class="pre">Attributes</span></code> section and follow the same formatting as a
+function’s <code class="docutils literal notranslate"><span class="pre">Args</span></code> section. Alternatively, attributes may be documented
+inline with the attribute’s declaration (see __init__ method below).</p>
+<p>Properties created with the <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> decorator should be documented
+in the property’s getter method.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>attr1 (str): Description of <cite>attr1</cite>.
+attr2 (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional): Description of <cite>attr2</cite>.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="test_py_module.example_google.ExampleClass.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>param1</em>, <em>param2</em>, <em>param3</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#ExampleClass.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.ExampleClass.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example of docstring on the __init__ method.</p>
+<p>The __init__ method may be documented in either the class level
+docstring, or as a docstring on the __init__ method itself.</p>
+<p>Either form is acceptable, but the two should not be mixed. Choose one
+convention to document the __init__ method and be consistent with it.</p>
+<dl>
+<dt>Note:</dt><dd><p>Do not include the <cite>self</cite> parameter in the <code class="docutils literal notranslate"><span class="pre">Args</span></code> section.</p>
+</dd>
+<dt>Args:</dt><dd><p>param1 (str): Description of <cite>param1</cite>.
+param2 (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional): Description of <cite>param2</cite>. Multiple</p>
+<blockquote>
+<div><p>lines are supported.</p>
+</div></blockquote>
+<p>param3 (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>): Description of <cite>param3</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_py_module.example_google.ExampleClass.__special__">
+<code class="descname">__special__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#ExampleClass.__special__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.ExampleClass.__special__" title="Permalink to this definition">¶</a></dt>
+<dd><p>By default special members with docstrings are not included.</p>
+<p>Special members are any methods or attributes that start with and
+end with a double underscore. Any special member with a docstring
+will be included in the output, if
+<code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code> is set to True.</p>
+<p>This behavior can be enabled by changing the following setting in
+Sphinx’s conf.py:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">napoleon_include_special_with_doc</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.example_google.ExampleClass.__weakref__">
+<code class="descname">__weakref__</code><a class="headerlink" href="#test_py_module.example_google.ExampleClass.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_py_module.example_google.ExampleClass._private">
+<code class="descname">_private</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#ExampleClass._private"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.ExampleClass._private" title="Permalink to this definition">¶</a></dt>
+<dd><p>By default private members are not included.</p>
+<p>Private members are any methods or attributes that start with an
+underscore and are <em>not</em> special. By default they are not included
+in the output.</p>
+<p>This behavior can be changed such that private members <em>are</em> included
+by changing the following setting in Sphinx’s conf.py:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">napoleon_include_private_with_doc</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.example_google.ExampleClass.attr3">
+<code class="descname">attr3</code><em class="property"> = None</em><a class="headerlink" href="#test_py_module.example_google.ExampleClass.attr3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Doc comment <em>inline</em> with attribute</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.example_google.ExampleClass.attr4">
+<code class="descname">attr4</code><em class="property"> = None</em><a class="headerlink" href="#test_py_module.example_google.ExampleClass.attr4" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of str: Doc comment <em>before</em> attribute, with type specified</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.example_google.ExampleClass.attr5">
+<code class="descname">attr5</code><em class="property"> = None</em><a class="headerlink" href="#test_py_module.example_google.ExampleClass.attr5" title="Permalink to this definition">¶</a></dt>
+<dd><p>str: Docstring <em>after</em> attribute, with type specified.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_py_module.example_google.ExampleClass.example_method">
+<code class="descname">example_method</code><span class="sig-paren">(</span><em>param1</em>, <em>param2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#ExampleClass.example_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.ExampleClass.example_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class methods are similar to regular functions.</p>
+<dl class="simple">
+<dt>Note:</dt><dd><p>Do not include the <cite>self</cite> parameter in the <code class="docutils literal notranslate"><span class="pre">Args</span></code> section.</p>
+</dd>
+<dt>Args:</dt><dd><p>param1: The first parameter.
+param2: The second parameter.</p>
+</dd>
+<dt>Returns:</dt><dd><p>True if successful, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.example_google.ExampleClass.readonly_property">
+<code class="descname">readonly_property</code><a class="headerlink" href="#test_py_module.example_google.ExampleClass.readonly_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>str: Properties should be documented in their getter method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.example_google.ExampleClass.readwrite_property">
+<code class="descname">readwrite_property</code><a class="headerlink" href="#test_py_module.example_google.ExampleClass.readwrite_property" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>: Properties with both a getter and setter
+should only be documented in their getter method.</p>
+<p>If the setter method contains notable behavior, it should be
+mentioned here.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="test_py_module.example_google.ExampleError">
+<em class="property">exception </em><code class="descclassname">test_py_module.example_google.</code><code class="descname">ExampleError</code><span class="sig-paren">(</span><em>msg</em>, <em>code</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#ExampleError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.ExampleError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exceptions are documented in the same way as classes.</p>
+<p>The __init__ method may be documented in either the class level
+docstring, or as a docstring on the __init__ method itself.</p>
+<p>Either form is acceptable, but the two should not be mixed. Choose one
+convention to document the __init__ method and be consistent with it.</p>
+<dl class="simple">
+<dt>Note:</dt><dd><p>Do not include the <cite>self</cite> parameter in the <code class="docutils literal notranslate"><span class="pre">Args</span></code> section.</p>
+</dd>
+<dt>Args:</dt><dd><p>msg (str): Human readable string describing the exception.
+code (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional): Error code.</p>
+</dd>
+<dt>Attributes:</dt><dd><p>msg (str): Human readable string describing the exception.
+code (int): Exception error code.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="test_py_module.example_google.ExampleError.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>msg</em>, <em>code</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#ExampleError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.ExampleError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="test_py_module.example_google.ExampleError.__weakref__">
+<code class="descname">__weakref__</code><a class="headerlink" href="#test_py_module.example_google.ExampleError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="test_py_module.example_google.example_generator">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">example_generator</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#example_generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.example_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generators have a <code class="docutils literal notranslate"><span class="pre">Yields</span></code> section instead of a <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section.</p>
+<dl>
+<dt>Args:</dt><dd><p>n (int): The upper limit of the range to generate, from 0 to <cite>n</cite> - 1.</p>
+</dd>
+<dt>Yields:</dt><dd><p>int: The next number in the range of 0 to <cite>n</cite> - 1.</p>
+</dd>
+<dt>Examples:</dt><dd><p>Examples should be written in doctest format, and should illustrate how
+to use the function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">example_generator</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+<span class="go">[0, 1, 2, 3]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_py_module.example_google.function_with_pep484_type_annotations">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">function_with_pep484_type_annotations</code><span class="sig-paren">(</span><em>param1: int</em>, <em>param2: str</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../_modules/test_py_module/example_google.html#function_with_pep484_type_annotations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.function_with_pep484_type_annotations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example function with PEP 484 type annotations.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>param1: The first parameter.
+param2: The second parameter.</p>
+</dd>
+<dt>Returns:</dt><dd><p>The return value. True for success, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_py_module.example_google.function_with_types_in_docstring">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">function_with_types_in_docstring</code><span class="sig-paren">(</span><em>param1</em>, <em>param2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#function_with_types_in_docstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.function_with_types_in_docstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example function with types documented in the docstring.</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a> type annotations are supported. If attribute, parameter, and
+return types are annotated according to <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>, they do not need to be
+included in the docstring:</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>param1 (int): The first parameter.
+param2 (str): The second parameter.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: The return value. True for success, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_py_module.example_google.module_level_function">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">module_level_function</code><span class="sig-paren">(</span><em>param1</em>, <em>param2=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/test_py_module/example_google.html#module_level_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test_py_module.example_google.module_level_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is an example of a module level function.</p>
+<p>Function parameters should be documented in the <code class="docutils literal notranslate"><span class="pre">Args</span></code> section. The name
+of each parameter is required. The type and description of each parameter
+is optional, but should be included if not obvious.</p>
+<p>If *args or **kwargs are accepted,
+they should be listed as <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>.</p>
+<p>The format for a parameter is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="p">(</span><span class="nb">type</span><span class="p">):</span> <span class="n">description</span>
+    <span class="n">The</span> <span class="n">description</span> <span class="n">may</span> <span class="n">span</span> <span class="n">multiple</span> <span class="n">lines</span><span class="o">.</span> <span class="n">Following</span>
+    <span class="n">lines</span> <span class="n">should</span> <span class="n">be</span> <span class="n">indented</span><span class="o">.</span> <span class="n">The</span> <span class="s2">&quot;(type)&quot;</span> <span class="ow">is</span> <span class="n">optional</span><span class="o">.</span>
+
+    <span class="n">Multiple</span> <span class="n">paragraphs</span> <span class="n">are</span> <span class="n">supported</span> <span class="ow">in</span> <span class="n">parameter</span>
+    <span class="n">descriptions</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl>
+<dt>Args:</dt><dd><p>param1 (int): The first parameter.
+param2 (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional): The second parameter. Defaults to None.</p>
+<blockquote>
+<div><p>Second line of description should be indented.</p>
+</div></blockquote>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>args: Variable length argument list.
+<a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs: Arbitrary keyword arguments.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful, False otherwise.</p>
+<p>The return type is optional and may be specified at the beginning of
+the <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section followed by a colon.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section may span multiple lines and paragraphs.
+Following lines should be indented to match the first line.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section supports any reStructuredText formatting,
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;param1&#39;</span><span class="p">:</span> <span class="n">param1</span><span class="p">,</span>
+    <span class="s1">&#39;param2&#39;</span><span class="p">:</span> <span class="n">param2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Raises:</dt><dd><dl class="simple">
+<dt>AttributeError: The <code class="docutils literal notranslate"><span class="pre">Raises</span></code> section is a list of all exceptions</dt><dd><p>that are relevant to the interface.</p>
+</dd>
+</dl>
+<p>ValueError: If <cite>param2</cite> is equal to <cite>param1</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="data">
+<dt id="test_py_module.example_google.module_level_variable1">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">module_level_variable1</code><em class="property"> = 12345</em><a class="headerlink" href="#test_py_module.example_google.module_level_variable1" title="Permalink to this definition">¶</a></dt>
+<dd><p>int: Module level variable one.</p>
+<p>Module level variables may be documented in
+either the <code class="docutils literal notranslate"><span class="pre">Attributes</span></code> section of the module docstring, or in an
+inline docstring immediately following the variable.</p>
+<p>Either form is acceptable, but the two should not be mixed. Choose
+one convention to document module level variables and be consistent
+with it.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="test_py_module.example_google.module_level_variable2">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">module_level_variable2</code><em class="property"> = 98765</em><a class="headerlink" href="#test_py_module.example_google.module_level_variable2" title="Permalink to this definition">¶</a></dt>
+<dd><p>int: Module level variable documented inline.</p>
+<p>The docstring may span multiple lines. The type may optionally be specified
+on the first line, separated by a colon.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="generated-index">
+<h2><a class="toc-backref" href="#id8">5.3. Generated Index</a><a class="headerlink" href="#generated-index" title="Permalink to this headline">¶</a></h2>
+<p>Part of the sphinx build process in generate and index file: <a class="reference internal" href="../genindex.html"><span class="std std-ref">Index</span></a>.</p>
+</div>
+<div class="section" id="optional-parameter-args">
+<h2><a class="toc-backref" href="#id9">5.4. Optional parameter args</a><a class="headerlink" href="#optional-parameter-args" title="Permalink to this headline">¶</a></h2>
+<p>At this point optional parameters <a class="reference external" href="https://groups.google.com/forum/#!topic/sphinx-users/_qfsVT5Vxpw">cannot be generated from code</a>.
+However, some projects will manually do it, like so:</p>
+<p>This example comes from <a class="reference external" href="http://django-payments.readthedocs.org/en/latest/modules.html#payments.authorizenet.AuthorizeNetProvide">django-payments module docs</a>.</p>
+<dl class="class">
+<dt id="test_py_module.example_google.payments.dotpay.DotpayProvider">
+<em class="property">class </em><code class="descclassname">payments.dotpay.</code><code class="descname">DotpayProvider</code><span class="sig-paren">(</span><em>seller_id</em>, <em>pin</em><span class="optional">[</span>, <em>channel=0</em><span class="optional">[</span>, <em>lock=False</em><span class="optional">]</span>, <em>lang='pl'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#test_py_module.example_google.payments.dotpay.DotpayProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>This backend implements payments using a popular Polish gateway, <a class="reference external" href="http://www.dotpay.pl">Dotpay.pl</a>.</p>
+<p>Due to API limitations there is no support for transferring purchased items.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seller_id</strong> – Seller ID assigned by Dotpay</p></li>
+<li><p><strong>pin</strong> – PIN assigned by Dotpay</p></li>
+<li><p><strong>channel</strong> – Default payment channel (consult reference guide)</p></li>
+<li><p><strong>lang</strong> – UI language</p></li>
+<li><p><strong>lock</strong> – Whether to disable channels other than the default selected above</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="data">
+<h2><a class="toc-backref" href="#id10">5.5. Data</a><a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="test_py_module.example_google.Data_item_1">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">Data_item_1</code><a class="headerlink" href="#test_py_module.example_google.Data_item_1" title="Permalink to this definition">¶</a></dt>
+<dt id="test_py_module.example_google.Data_item_2">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">Data_item_2</code><a class="headerlink" href="#test_py_module.example_google.Data_item_2" title="Permalink to this definition">¶</a></dt>
+<dt id="test_py_module.example_google.Data_item_3">
+<code class="descclassname">test_py_module.example_google.</code><code class="descname">Data_item_3</code><a class="headerlink" href="#test_py_module.example_google.Data_item_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue elit eu hendrerit mattis.</p>
+</dd></dl>
+
+<p>Some data link <a class="reference internal" href="#test_py_module.example_google.Data_item_1" title="test_py_module.example_google.Data_item_1"><code class="xref py py-data docutils literal notranslate"><span class="pre">Data_item_1</span></code></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="long.html" class="btn btn-neutral float-right" title="1. Long Sticky Nav" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lists_tables.html" class="btn btn-neutral float-left" title="4. Lists &amp; Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Eddie Deane
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
