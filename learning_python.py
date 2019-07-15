@@ -44,6 +44,7 @@ X importing modules and packages https://chrisyeh96.github.io/2017/08/08/definit
 - pinkbike comment sentiment
 - scrape newsletters and create topics
 - django
+- more pythonic code https://realpython.com/learning-paths/writing-pythonic-code/
 - decorators (property, classmethod, staticmethod)
 - more standard library https://docs.python.org/3/library/index.html
 - recursion https://realpython.com/python-thinking-recursively/
