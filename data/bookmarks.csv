@@ -1,0 +1,239 @@
+﻿strings,links
+reddit,https://www.reddit.com/r/all
+Twitter,https://twitter.com/
+Keep,https://keep.google.com/#home
+Gmail,https://mail.google.com/
+Inbox,https://inbox.google.com/
+Calendar,https://calendar.google.com/
+Drive,https://drive.google.com/drive/my-drive
+News,https://news.google.com/news/?ned=us&hl=en
+LinkedIn,https://www.linkedin.com/feed/
+meetup,https://www.meetup.com/
+slack,https://slack.com/
+Members Galvanize,https://members.galvanize.com/
+Learn,https://learn.galvanize.com/cohorts/245/dashboard
+Talent,https://talent.galvanize.com/students/1851/jobs
+github,https://github.com/
+udemy,https://www.udemy.com/
+HackerRank,https://www.hackerrank.com/dashboard
+"Analytics, Data Mining, and Data Science",http://www.kdnuggets.com/
+Hacker News,https://news.ycombinator.com/
+Data science - O'Reilly Media,https://www.oreilly.com/topics/data-science
+Data Science News 2017 | Data Elixir - Free for Data Lovers,https://dataelixir.com/
+"FiveThirtyEight | Nate Silver’s FiveThirtyEight uses statistical analysis — hard numbers — to tell compelling stories about politics, sports, science, economics and culture.",https://fivethirtyeight.com/
+Home - Quora,https://www.quora.com/
+"Medium – Read, write and share stories that matter",https://medium.com/
+TechCrunch - The latest technology news and information on startups,https://techcrunch.com/
+DataTau,http://www.datatau.com/news
+Building a data science portfolio: Storytelling with data,https://www.dataquest.io/blog/data-science-portfolio-project/?utm_source=intercom&utm_medium=email&utm_campaign=signup_10day_porfolio
+Colorado Master's in Data Science Programs | Colorado MS in Analytics Programs,http://www.mastersindatascience.org/schools/colorado/
+Money wins Elections,http://letsfreecongress.org/
+Principal Component Analysis explained visually,http://setosa.io/ev/principal-component-analysis/
+"Analyzing 1.1 Billion NYC Taxi and Uber Trips, with a Vengeance - Todd W. Schneider",http://toddwschneider.com/posts/analyzing-1-1-billion-nyc-taxi-and-uber-trips-with-a-vengeance/
+Netflix Awards $1 Million Prize and Starts a New Contest - The New York Times,http://bits.blogs.nytimes.com/2009/09/21/netflix-awards-1-million-prize-and-starts-a-new-contest/?_r=0
+I'd Rather Predict Basketball Games Than Elections: Elastic NBA Rankings | Stitch Fix Technology – Multithreaded,http://multithreaded.stitchfix.com/blog/2016/11/22/nba-rankings/
+Requests: HTTP for Humans — Requests 2.12.4 documentation,http://www.python-requests.org/en/latest/
+Chicago vs New York - Advanced U.S. city comparison tool,http://www.city-data.com/city-compare/
+The History of Campaign Spending - Metrocosm,http://metrocosm.com/the-history-of-campaign-spending/
+Metrocosm Home - Metrocosm,http://metrocosm.com/
+Stitch Fix Algorithms Tour,http://algorithms-tour.stitchfix.com/#recommendation-systems
+Data Mining Problems in Retail – Highly Scalable Blog,https://highlyscalable.wordpress.com/2015/03/10/data-mining-problems-in-retail/
+Introducing Goodwater Index – Goodwater Capital,http://www.goodwatercap.com/thesis/index
+Explained Visually,http://setosa.io/ev/
+Lonely Planet,http://www.lonelyplanet.com/
+15 Data Visualizations That Will Blow Your Mind | Udacity,http://blog.udacity.com/2015/01/15-data-visualizations-will-blow-mind.html
+8 Ways Machine Learning Is Improving Companies’ Work Processes,https://hbr.org/2017/05/8-ways-machine-learning-is-improving-companies-work-processes?utm_campaign=Data%2BElixir&utm_medium=email&utm_source=Data_Elixir_134
+Research Blog: Using Machine Learning to predict parking difficulty,https://research.googleblog.com/2017/02/using-machine-learning-to-predict.html?m=1
+How the Average Triumphed Over the Median,https://priceonomics.com/how-the-average-triumphed-over-the-median/
+James Harris Simons - Wikipedia,https://en.wikipedia.org/wiki/James_Harris_Simons
+#VoCo. Adobe MAX 2016 (Sneak Peeks) | Adobe Creative Cloud - YouTube,https://www.youtube.com/watch?v=I3l4XLZ59iw&feature=youtu.be&t=13s
+Face2Face: Real-time Face Capture and Reenactment of RGB Videos,http://www.graphics.stanford.edu/~niessner/thies2016face.html
+To Fail the Turing Test Against Yourself,http://yousefamar.com/blog/2016/09/13/to-fail-the-turing-test-against-yourself.html
+A Tour of Machine Learning Algorithms,http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/
+Experiments at Airbnb – Airbnb Engineering & Data Science – Medium,https://medium.com/airbnb-engineering/experiments-at-airbnb-e2db3abf39e7
+SQL style guide by Simon Holywell,http://www.sqlstyle.guide/
+A Neural Network Playground,"http://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.48699&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false"
+Google Codelabs,https://codelabs.developers.google.com/
+dsi-welcome,https://github.com/gSchool/dsi-welcome/tree/17-02-DS-DP
+dsi-soln,https://github.com/gSchool/dsi-solns-g49
+Zipfian Academy,https://github.com/zipfian
+Galvanize Inc.,https://github.com/gSchool
+DSCareerGuide,https://docs.google.com/document/d/1J9rjTzv3VKB2Qq10P3Oq2mV_K8pJOSdaeJ3IImPszBA/edit
+Statistics Short Course — stats-shortcourse 1.0 documentation,https://galvanizeopensource.github.io/stats-shortcourse/
+bldr_pyfun_apr4 | gstudents Slack,https://gstudents.slack.com/messages/C4TRBQDPW/
+Git,https://git-scm.com/
+GitHub - zipfian/data-science-primer: A set of self paced resources for anyone looking to get into data science. The materials assume an absolute beginner and are intended to prepare students for the Galvanize Data Science interview process: http://www.ga,https://github.com/zipfian/data-science-primer
+Atom,https://atom.io/
+Anaconda | Continuum,https://www.continuum.io/Anaconda-Overview
+PhysBuzz on Scratch,https://scratch.mit.edu/users/PhysBuzz/
+Introducing IPython — IPython 5.3.0 documentation,http://ipython.readthedocs.io/en/stable/interactive/tutorial.html
+Jupyter and the future of IPython — IPython,https://ipython.org/
+Galvanize/python-fundamentals/,http://localhost:8888/tree/Egnyte/Private/edeane/Red%20Bull%20Working/Analytics/Galvanize/python-fundamentals
+Code Like a Pythonista: Idiomatic Python,http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#python-has-names
+Huaqiangbei - Wikipedia,https://en.wikipedia.org/wiki/Huaqiangbei
+Are you ready to apply to Zipfian Academy?,https://docs.google.com/document/d/1GI3oVas8yswhqPk_8-VIANHR1uJ6R19HNhl7GiH9vq4/pub
+PyMC3 fonnesbeck/Bios8366: Advanced Statistical Computing at Vanderbilt University's Department of Biostatistics,https://github.com/fonnesbeck/Bios8366
+Precision and recall - Wikipedia,https://en.wikipedia.org/wiki/Precision_and_recall
+F1 score - Wikipedia,https://en.wikipedia.org/wiki/F1_score
+Accuracy and precision - Wikipedia,https://en.wikipedia.org/wiki/Accuracy_and_precision
+Receiver operating characteristic - Wikipedia,https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Basic_concept
+Ordinary least squares - Wikipedia,https://en.wikipedia.org/wiki/Ordinary_least_squares
+Simple guide to confusion matrix terminology,http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/
+"Calculus (all content, first year) | Khan Academy",https://www.khanacademy.org/math/calculus-home?t=classes
+Linear Algebra | Khan Academy,https://www.khanacademy.org/math/linear-algebra
+Statistics and Probability | Khan Academy,https://www.khanacademy.org/math/statistics-probability
+WebFrameworks - Python Wiki,https://wiki.python.org/moin/WebFrameworks
+OpenTechSchool – Websites with Python Flask,http://opentechschool.github.io/python-flask/
+Welcome | Flask (A Python Microframework),http://flask.pocoo.org/
+Overview — Sphinx 1.6.3+ documentation,http://www.sphinx-doc.org/en/stable/
+The Web framework for perfectionists with deadlines | Django,https://www.djangoproject.com/
+Bootstrap Themes,https://themes.getbootstrap.com/
+Start Bootstrap - Free Bootstrap Themes and Templates,https://startbootstrap.com/
+Flask Tutorial - 1. Introduction to Flask - YouTube,https://www.youtube.com/watch?v=gDSLrpxR3G4&list=PLei96ZX_m9sWQco3fwtSMqyGL-JDQo28l
+Dashboard - IBM Bluemix,https://console.ng.bluemix.net/dashboard/apps/?env_id=ibm:yp:us-south
+IBM Data Science Experience,https://datascience.ibm.com/
+IBM developerWorks : IBM's resource for developers and IT professionals,https://www.ibm.com/developerworks/
+Data Science Platform | RapidMiner,https://rapidminer.com/
+Living Atlas of the World | ArcGIS,https://livingatlas.arcgis.com/en/#s=0
+ArcGIS | Main,https://www.arcgis.com/features/index.html
+Data Modeling & Analytics,https://dms.redbull.com/dms/cs.exe/Open/dma_landingpage
+BullDrive Analytics,https://bulldrive.redbull.com/app/index.do#storage/files/1/Shared/Departments%20US/ANALYTICS
+Kaggle: Your Home for Data Science,https://www.kaggle.com/
+Heritage Health Prize,http://www.heritagehealthprize.com/c/hhp
+Project Jupyter | Home,http://jupyter.org/
+The world's leading software development platform · GitHub,https://github.com/
+TETRAD Project,http://www.phil.cmu.edu/projects/tetrad/
+Tableau Friction: Finally - you can use the Tableau data colors in your formatting.,http://tableaufriction.blogspot.ro/2012/11/finally-you-can-use-tableau-data-colors.html
+Business Intelligence and Analytics | Tableau Software,https://www.tableau.com/
+Leader in Self-Service Data Analytics | Alteryx,http://www.alteryx.com/
+USAFacts,https://usafacts.org/
+Place Datasets (April Fools 2017) : redditdata,https://www.reddit.com/r/redditdata/comments/6640ru/place_datasets_april_fools_2017/
+Data Is Beautiful,https://www.reddit.com/r/dataisbeautiful/
+Data Science,https://www.reddit.com/r/datascience/
+Requests: HTTP for Humans — Requests 2.13.0 documentation,http://docs.python-requests.org/en/master/
+Top 7 Tools and Programming Languages for Statistical Modelling & Analytics,https://www.techinasia.com/talk/top-7-tools-programming-languages-statistical-modelling-analytics
+Esri Demographics | ArcGIS,http://doc.arcgis.com/en/esri-demographics/
+D3.js - Data-Driven Documents,https://d3js.org/
+My essential data science tools,http://michaelerasm.us/post/my-essential-data-science-tools/
+Consumer Targeting Analysis (Phase II),https://maps.redbull.com/cta2.html
+IBM developerWorks : IBM's resource for developers and IT professionals,https://www.ibm.com/developerworks/
+Dashboard - IBM Bluemix,https://console.eu-gb.bluemix.net/dashboard/apps?env_id=ibm:yp:us-south
+Python Plotting for Exploratory Analysis,http://pythonplot.com/?utm_campaign=Data%2BElixir&utm_medium=email&utm_source=Data_Elixir_137
+Mode - The Collaborative Analytics Platform for Data Analysts,https://modeanalytics.com/
+Overview | Prodigy - Radically efficient machine teaching,https://prodi.gy/docs/
+API Directory | ProgrammableWeb,https://www.programmableweb.com/apis/directory
+"FiveThirtyEight | Nate Silver’s FiveThirtyEight uses statistical analysis — hard numbers — to tell compelling stories about politics, sports, science, economics and culture.",http://fivethirtyeight.com/
+The Pudding,https://pudding.cool/
+FlowingData,http://flowingdata.com/
+UCI Machine Learning Repository,https://archive.ics.uci.edu/ml/index.php
+Datasets,https://www.reddit.com/r/datasets/
+Datasets | Kaggle,https://www.kaggle.com/datasets/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-skws-all-all-trial&gclid=Cj0KEQjwnazLBRDxrdGMx-Km4oQBEiQAQJ1q61Q09-PMfBSbRY7zHFySPqmtyBzkP856eaW1p2M4a5gaAm938P8HAQ&dclid=COyvrJ_pjtUCFVs6Twoda7QHkw
+Home | data.world,https://data.world/
+wbkd/awesome-interactive-journalism: A list of awesome interactive journalism projects.,https://github.com/wbkd/awesome-interactive-journalism
+Datasets for Data Mining and Data Science,http://www.kdnuggets.com/datasets/index.html
+Python Algo Trading: FX Trading with Oanda | Udemy,https://www.udemy.com/python-algo-trading-fx-trading-with-oanda/learn/v4/overview
+Anthony Ng - YouTube,https://www.youtube.com/channel/UCLHEn-IEuXcy3ezpPNqFgDg
+Algorithmic trading in less than 100 lines of Python code - O'Reilly Media,https://www.oreilly.com/learning/algorithmic-trading-in-less-than-100-lines-of-python-code
+Python Programming Tutorials,https://pythonprogramming.net/machine-learning-pattern-recognition-algorithmic-forex-stock-trading/
+anthonyng2 (Anthony Ng),https://github.com/anthonyng2
+Introduction — OANDA REST V20 API Wrapper 0.4.3 documentation,http://oanda-api-v20.readthedocs.io/en/latest/installation.html
+Time Series Prediction Using Recurrent Neural Networks (LSTMs),https://blog.statsbot.co/time-series-prediction-using-recurrent-neural-networks-lstms-807fa6ca7f
+What are the best currency pairs to trade?,https://admiralmarkets.com/education/articles/forex-basics/what-are-the-best-currency-pairs-to-trade
+The oandapyV20 REST-V20 API wrapper documentation — OANDA REST V20 API Wrapper 0.4.3 documentation,http://oanda-api-v20.readthedocs.io/en/latest/index.html
+Online Trading & FX for Business | OANDA,https://www.oanda.com/
+Introduction,http://developer.oanda.com/rest-live-v20/introduction/
+Machine Learning and Pattern Recognition for Algorithmic Forex and Stock Trading: Intro - YouTube,https://www.youtube.com/watch?v=v_L9jR8P-54&list=PLQVvvaa0QuDe6ZBtkCNWNUbdaBo2vA4RO
+Machine Learning for Trading | Udacity,https://www.udacity.com/course/machine-learning-for-trading--ud501
+GalvanizeOpenSource/Recurrent_Neural_Net_Meetup,https://github.com/GalvanizeOpenSource/Recurrent_Neural_Net_Meetup
+"wilsonfreitas/awesome-quant: A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",https://github.com/wilsonfreitas/awesome-quant
+"Denver, Boulder Startups & Tech Companies | Built In Colorado",http://www.builtincolorado.com/
+icon social package - Google Search,https://www.google.com/search?client=ubuntu&channel=fs&q=icon+social+package&ie=utf-8&oe=utf-8
+"The Muse | Expert Career Advice, Job Search & Inside Looks Into Companies Hiring",https://www.themuse.com/
+The Complete Guide to Data Science Interviews by Jose Portilla — Kickstarter,https://www.kickstarter.com/projects/joseportilla/the-complete-guide-to-data-science-interviews
+Feather – Simply beautiful open source icons,https://feathericons.com/
+mbeyeler/opencv-machine-learning: Machine Learning for OpenCV: A practical introduction to the world of machine learning using OpenCV and Python,https://github.com/mbeyeler/opencv-machine-learning
+trafferty/ipython-opencv-notebooks: iPython Notebooks used while learning OpenCV,https://github.com/trafferty/ipython-opencv-notebooks
+"OpenCV 3 Tutorials, Resources, and Guides | PyImageSearch",https://www.pyimagesearch.com/opencv-tutorials-resources-guides/
+Google Calendar,https://calendar.google.com/calendar/render?pli=1#main_7%7Cmonth
+Top 10 IPython Notebook Tutorials for Data Science and Machine Learning,http://www.kdnuggets.com/2016/04/top-10-ipython-nb-tutorials.html
+Jupyter-Notes,https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks
+Dashboard | Codecademy,https://www.codecademy.com/learn
+Jupyter-Notes,http://www.kdnuggets.com/2016/04/top-10-ipython-nb-tutorials.html
+List of SQL commands | Codecademy,https://www.codecademy.com/articles/sql-commands?r=master
+Dashboard - IBM Bluemix,https://console.ng.bluemix.net/dashboard/services?env_id=ibm:yp:us-south
+IBM Data Science Experience,https://apsportal.ibm.com/analytics
+"Every single Machine Learning course on the internet, ranked by your reviews",https://medium.freecodecamp.org/every-single-machine-learning-course-on-the-internet-ranked-by-your-reviews-3c4a7b8026c0
+Deep Learning For Coders—36 hours of lessons for free,http://course.fast.ai/
+Learn data science with Python and R. Get started for free.,https://www.dataquest.io/
+The Elements of AI - a free online course,https://www.elementsofai.com/
+1.3.6.6. Gallery of Distributions,http://www.itl.nist.gov/div898/handbook/eda/section3/eda366.htm
+10 Minutes to pandas — pandas 0.20.3 documentation,http://pandas.pydata.org/pandas-docs/stable/10min.html
+2. Basic Principles of Counting,http://www.intmath.com/counting-probability/2-basic-principles-counting.php
+A Complete Tutorial to Learn Data Science with Python from Scratch,https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/
+A Visual Introduction to Machine Learning,http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
+Batch file - Wikipedia,https://en.wikipedia.org/wiki/Batch_file
+Bayesian Statistics Explained in Simple English For Beginners,https://www.analyticsvidhya.com/blog/2016/06/bayesian-statistics-beginners-simple-english/
+BlueGranite | Delivering Microsoft Business Intelligence and Advanced Analytics Solutions,https://www.blue-granite.com/
+Courses - Andrew Ng,http://www.andrewng.org/courses/
+Courses - Cognitive Class,https://cognitiveclass.ai/courses/
+CS 229: Machine Learning (Course handouts),http://cs229.stanford.edu/materials.html
+Data mining - Wikipedia,https://en.wikipedia.org/wiki/Data_mining
+Data School,http://www.dataschool.io/
+Dataquest Dashboard,https://www.dataquest.io/dashboard
+ESLI,https://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf
+Home | Codewars,https://www.codewars.com/dashboard
+How To Install and Use PostgreSQL on Ubuntu 16.04 | DigitalOcean,https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
+Improving interpretability of NN,https://arxiv.org/pdf/1705.05598.pdf
+Insight Data Science Fellows Program,http://insightdatascience.com/
+Introduction to Linux | Linux Foundation Training,https://training.linuxfoundation.org/linux-courses/system-administration-training/introduction-to-linux
+ISLR,http://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf
+jakevdp/PythonDataScienceHandbook: Jupyter Notebooks for the Python Data Science Handbook,https://github.com/jakevdp/PythonDataScienceHandbook
+Learn Python the Hard Way - Read for Free,https://learnpythonthehardway.org/book/ex40.html
+"Learn R, Learn Python & Learn Data Science online",https://www.datacamp.com/home#tab_python-courses
+Learn to code | Codecademy,https://www.codecademy.com/
+List of SQL commands | Codecademy,https://www.codecademy.com/articles/sql-commands?r=master
+Logistic regression - Wikipedia,https://en.wikipedia.org/wiki/Logistic_regression
+Machine Learning,http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning
+Machine Learning - complete course notes,http://www.holehouse.org/mlclass/
+Machine learning - Wikipedia,https://en.wikipedia.org/wiki/Machine_learning
+Machine Learning FAQ,http://sebastianraschka.com/faq/index.html
+Machine Learning Masterclass: Learn Practical ML in a Single Month.,https://elitedatascience.com/machine-learning-masterclass
+MAE and RMSE — Which Metric is Better? – Human in a Machine World – Medium,https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d
+Merchant - Wikipedia,https://en.wikipedia.org/wiki/Merchant
+"No, The TSP Isn't NP Complete (IT Best Kept Secret Is Optimization)",https://www.ibm.com/developerworks/community/blogs/jfp/entry/no_the_tsp_isn_t_np_complete?lang=en
+Object-oriented programming - Wikipedia,https://en.wikipedia.org/wiki/Object-oriented_programming
+Optical character recognition - Wikipedia,https://en.wikipedia.org/wiki/Optical_character_recognition
+Our Favorite Recipes — Matplotlib 2.0.2 documentation,https://matplotlib.org/users/recipes.html
+Pandas and Python: Top 10 - Curiosity,http://manishamde.github.io/blog/2013/03/07/pandas-and-python-top-10/
+PostgreSQL Tutorial - Learn PostgreSQL from Scratch,http://www.postgresqltutorial.com/
+Python syntax and semantics - Wikipedia,https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators
+SciPyStats,http://pytolearn.csd.auth.gr/d1-hyptest/11/distros.html
+SELECT basics - SQLZOO,https://sqlzoo.net/wiki/SELECT_basics
+sentdex - YouTube,https://www.youtube.com/user/sentdex
+The Bootcamp Bootleg — Stanford d.school,https://dschool.stanford.edu/resources/the-bootcamp-bootleg
+Top Data Science Online Courses in 2017 – LearnDataSci,http://www.learndatasci.com/best-data-science-online-courses/
+Travelling salesman problem - Wikipedia,https://en.wikipedia.org/wiki/Travelling_salesman_problem
+Tutorials | Kaggle,https://www.kaggle.com/wiki/Tutorials
+UCI Machine Learning Repository,http://archive.ics.uci.edu/ml/
+Wolfram|Alpha Examples: Statistics & Data Analysis,https://www.wolframalpha.com/examples/Statistics.html
+AngelList - Where the world meets startups,https://angel.co/?ref=nav
+Fiverr - Freelance Services Marketplace for The Lean Entrepreneur,https://www.fiverr.com/
+Python Regular Expressions  |  Google for Education  |  Google Developers,https://developers.google.com/edu/python/regular-expressions
+Complete Guide to Parameter Tuning in XGBoost (with codes in Python),https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
+The Hadoop Ecosystem Table,https://hadoopecosystemtable.github.io/
+Life Is Study,http://hamelg.blogspot.com/?view=flipcard
+Building scikit-learn transformers,http://www.dreisbach.us/articles/building-scikit-learn-compatible-transformers/
+Data Science Use Cases | Kaggle,https://www.kaggle.com/wiki/DataScienceUseCases
+A Beginner’s Guide to AI/ML 🤖👶 – Machine Learning for Humans – Medium,https://medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12
+Introducing the Data Science Maturity Model,https://blog.dominodatalab.com/introducing-the-data-science-maturity-model/
+Linux-file-system-hierarchy-Linux-file-structure-optimized.jpg (1000×647),https://www.blackmoreops.com/wp-content/uploads/2015/02/Linux-file-system-hierarchy-Linux-file-structure-optimized.jpg
+GitHub - ml874/Data-Science-Cheatsheet,https://github.com/ml874/Data-Science-Cheatsheet
+Academic Torrents,http://academictorrents.com/
+HTML CSS JavaScript - Tools and Resources,https://html-css-js.com/
+"Writing your first Django app, part 1 | Django documentation | Django",https://docs.djangoproject.com/en/2.0/intro/tutorial01/
+Build an HTML Email Template From Scratch,https://webdesign.tutsplus.com/articles/build-an-html-email-template-from-scratch--webdesign-12770
+HTML5 UP! Responsive HTML5 and CSS3 Site Templates,https://html5up.net/
+Homepage - Material Design,https://material.io/
+"Bootstrap · The most popular HTML, CSS, and JS library in the world.",https://getbootstrap.com/
+Example NumPy Style Python Docstrings — napoleon 0.6.1 documentation,http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html
+Example Google Style Python Docstrings — napoleon 0.6.1 documentation,http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html#example-google
