@@ -34,6 +34,9 @@ pd.to_timedelta)
 10 pandas tricks
 https://towardsdatascience.com/10-python-pandas-tricks-that-make-your-work-more-efficient-2e8e483808ba
 
+25 pandas tricks
+https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/top_25_pandas_tricks.ipynb
+
 """
 
 import numpy as np
