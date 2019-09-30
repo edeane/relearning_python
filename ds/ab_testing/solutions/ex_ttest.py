@@ -1,7 +1,7 @@
 # From the course: Bayesin Machine Learning in Python: A/B Testing
 # https://deeplearningcourses.com/c/bayesian-machine-learning-in-python-ab-testing
 # https://www.udemy.com/bayesian-machine-learning-in-python-ab-testing
-from __future__ import print_function, division
+
 from builtins import range
 # Note: you may need to update your version of future
 # sudo pip install -U future
@@ -12,7 +12,7 @@ import pandas as pd
 from scipy import stats
 
 # get data
-df = pd.read_csv('advertisement_clicks.csv')
+df = pd.read_csv('ds/ab_testing/solutions/advertisement_clicks.csv')
 a = df[df['advertisement_id'] == 'A']
 b = df[df['advertisement_id'] == 'B']
 a = a['action']

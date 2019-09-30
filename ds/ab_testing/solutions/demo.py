@@ -1,15 +1,12 @@
 # From the course: Bayesin Machine Learning in Python: A/B Testing
 # https://deeplearningcourses.com/c/bayesian-machine-learning-in-python-ab-testing
 # https://www.udemy.com/bayesian-machine-learning-in-python-ab-testing
-from __future__ import print_function, division
-from builtins import range
-# Note: you may need to update your version of future
-# sudo pip install -U future
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import beta
+plt.interactive(False)
 
 def plot(a, b, trial, ctr):
   x = np.linspace(0, 1, 200)
@@ -17,7 +14,6 @@ def plot(a, b, trial, ctr):
   mean = float(a) / (a + b)
   plt.plot(x, y)
   plt.title("Distributions after %s trials, true rate = %.1f, mean = %.2f" % (trial, ctr, mean))
-  plt.show()
 
 true_ctr = 0.3
 a, b = 1, 1 # beta parameters
@@ -31,3 +27,4 @@ for t in range(1501):
 
   if t in show:
     plot(a, b, t+1, true_ctr)
+    plt.show()
