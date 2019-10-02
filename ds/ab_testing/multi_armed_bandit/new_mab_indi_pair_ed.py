@@ -159,104 +159,51 @@ print(f'p value is {p/2:.2}')
 
 # change to array that concats to bottom with each round
 
-
-# bandits
-seed = 42
-np.random.seed(seed)
-random.seed(seed)
-
-p_array = np.array([0.02, 0.04, 0.06])
-optimal = np.argmax(p_array)
-
-
-n_bandits = len(p_array)
-n_rounds = 1_000
-choices_lst = []
-score_lst = []
-
-
-a_arr = np.array([1, 2, 3, 4, 5, 6])
-b_arr = np.array([7, 8, 9, 10, 11, 12])
-
-np.r_[a_arr, b_arr]
-np.concatenate([a_arr, b_arr])
-
-# number of wins and trials for each bandit
-wins = np.zeros(n_bandits)
-trials = np.zeros(n_bandits)
-
-# keep track of each round
-scores = np.zeros(n_rounds)
-choices = np.zeros(n_rounds)
-
-
 # for each choice bandit type
 #   for n_rounds
-#     keep track of each round in np array / df
+#     keep track of each round in np array (choice, result) / deque / list
+#     aggregate np array to get wins by bandit, trials by bandit
+
+# incorporate
+# https://github.com/gSchool/dsi-solns-g49/blob/master/multi-armed-bandit/pair/pair.py
+
 
 # random choice or use function
 # create a pull choice for each bandit type
-# choice_dict = {'max_mean': max_mean,
-#                'random_choice': random_choice,
-#                'epsilon_greedy': epsilon_greedy,
-#                'softmax': softmax,
-#                'ucb1': ucb1,
-#                'bayesian_bandit': bayesian_bandit}
 
-for k in range(n_rounds):
 
-    pull_choice = random.choice([0,1,2])
 
-    # result from pulling
-    pull_result = np.random.random() < p_array[pull_choice]
 
-    # update stats
-    wins[pull_choice] += pull_result
-    trials[pull_choice] += 1
+# bandits
 
-    scores[k] = pull_result
-    choices[k] = pull_choice
 
-wins
-trials
-scores
-choices
 
-def max_mean():
-    ''' Pick the bandit with the current best observed proportion of winning
-    '''
+def random_choice(n_bandits):
+    '''Random choice'''
+    return np.random.randint(n_bandits)
+
+def max_mean(wins, trials):
+    ''' Pick the bandit with the current best observed proportion of winning'''
     # make sure to play each bandit at least once
     if trials.min() == 0:
         return np.argmin(trials)
     return np.argmax(wins / trials)
 
-wins / trials
-
-for i in range(100):
-    print(np.random.randint(n_bandits))
-
-def random_choice():
-    return np.random.randint(n_bandits)
-
-def epsilon_greedy():
+def epsilon_greedy(wins, trials, n_bandits, epsilon = 0.1):
     '''Pick a bandit uniformly at random epsilon percent of the time.
     Otherwise pick the bandit with the best observed proportion of winning'''
-    # Set default value of epsilon if not provided in init
-    epsilon = 0.1
-
     # Verify that we have attempted each bandit at least once
     if trials.min() == 0:
         return np.argmin(trials)
+    # Explor less than epsilon else pick max
     if random.random() < epsilon:
-        # Exploration
         return np.random.randint(n_bandits)
     else:
         return np.argmax(wins / trials)
 
-def softmax():
+def softmax(wins, trials, n_bandits, tau=0.01):
     ''' Pick an bandit according to the Boltzman Distribution'''
     # Set default value of tau if not provided in init
-    tau = 0.01
 
     # Verify that we have attempted each bandit at least once
     if trials.min() == 0:
@@ -267,31 +214,100 @@ def softmax():
     probs = scaled / np.sum(scaled)
     return np.random.choice(range(0, n_bandits), p=probs)
 
-
-def ucb1(self):
+def ucb1(wins, trials, n_round):
     ''' Pick the bandit according to the UCB1 strategy'''
     # Verify that we have attempted each bandit at least once
     if trials.min() == 0:
         return np.argmin(trials)
 
     means = wins / trials
-    confidence_bounds = np.sqrt((2 * np.log(n_rounds)) / trials)
+    confidence_bounds = np.sqrt((2 * np.log(n_round)) / trials)
     upper_confidence_bounds = means + confidence_bounds
     return np.argmax(upper_confidence_bounds)
 
-def bayesian_bandit(self):
+def bayesian_bandit(wins, trials):
     '''Randomly sample from a beta distribution for each bandit and pick the one with the largest value'''
-    alpha = 1 + wins
-    beta = 1 + trials - wins
-    samples = [np.random.beta(a=alpha, b=beta)
-               for wins, trials in zip(self.wins, self.trials)]
+    samples = [np.random.beta(a=1 + wins_z, b=1 + trials_z - wins_z)
+               for wins_z, trials_z in zip(wins, trials)]
     return np.argmax(samples)
 
 
+opto_choice_dict = ['max_mean', 'random_choice', 'epsilon_greedy', 'softmax', 'ucb1', 'bayesian_bandit']
+
+p_array = np.array([0.03, 0.05, 0.07])
+optimal = np.argmax(p_array)
+
+n_bandits = len(p_array)
+n_rounds = 100_000
+
+seeds = range(1, 10)
+results = {i: [] for i in opto_choice_dict}
+results
+
+for seed in seeds:
+
+    np.random.seed(seed)
+    random.seed(seed)
+    print('\n')
+    print(f'seed: {seed}')
+
+    for key in opto_choice_dict:
+
+        # number of wins and trials for each bandit
+        wins = np.zeros(n_bandits)
+        trials = np.zeros(n_bandits)
+
+        # keep track of each round
+        scores = np.zeros(n_rounds)
+        choices = np.zeros(n_rounds)
+
+        print(f'running: {key}')
+
+        for n_round in range(n_rounds):
+
+            if key == 'max_mean':
+                pull_choice = max_mean(wins, trials)
+            elif key == 'random_choice':
+                pull_choice = random_choice(n_bandits)
+            elif key == 'epsilon_greedy':
+                pull_choice = epsilon_greedy(wins, trials, n_bandits)
+            elif key == 'softmax':
+                pull_choice = softmax(wins, trials, n_bandits)
+            elif key == 'ucb1':
+                pull_choice = ucb1(wins, trials, n_round)
+            elif key == 'bayesian_bandit':
+                pull_choice = bayesian_bandit(wins, trials)
+            else:
+                raise ValueError(f'key not found {key}')
+
+            # keep track of choices made
+            choices[n_round] = pull_choice
+
+            # result from pulling
+            pull_result = np.random.random() < p_array[pull_choice]
+
+            # update stats for each bandit
+            wins[pull_choice] += pull_result
+            trials[pull_choice] += 1
+
+            # keep track of each round result
+            scores[n_round] = pull_result
+
+        # each bandit pay out
+        results[key].append(sum(scores))
+        print(f'each bandit payout {np.round(wins / trials, 4)}')
+        # our return
+        print(f'random payout {(sum(p_array) / 3):.4f}')
+        print(f'optimal payout {p_array[optimal]}')
+        print(f'our payout {sum(scores) / n_rounds}')
+        print(f'total score {sum(scores):n}')
 
 
 
 
+results
+for key, val in results.items():
+    print(f'{key}: {int(sum(val)):,} {int(np.mean(val)):,}')
 
 
 
